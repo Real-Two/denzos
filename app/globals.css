@@ -1,27 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+    --font-inter: 'Inter', sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #FAF8F4;
+    color: #1E1E1E;
+    font-family: var(--font-inter);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-cormorant);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: 0.01em;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-bronze text-ivory px-8 py-3 text-sm tracking-widest uppercase font-inter font-medium transition-all duration-300 hover:bg-bronze-500 active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 border border-bronze text-bronze px-8 py-3 text-sm tracking-widest uppercase font-inter font-medium transition-all duration-300 hover:bg-bronze hover:text-ivory active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-ivory border border-bronze text-bronze px-6 py-2.5 text-xs tracking-widest uppercase font-inter font-medium transition-all duration-300 hover:bg-bronze hover:text-ivory;
+  }
+
+  .section-heading {
+    @apply font-cormorant text-4xl md:text-5xl font-light text-charcoal;
+  }
+
+  .section-subheading {
+    @apply font-inter text-xs tracking-[0.25em] uppercase text-charcoal-muted;
+  }
+
+  .bronze-rule {
+    @apply border-t border-bronze/30;
+    border-top-width: 0.5px;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-sm;
+  }
 }
 
 @layer utilities {
+  .font-cormorant {
+    font-family: var(--font-cormorant);
+  }
+
+  .font-inter {
+    font-family: var(--font-inter);
+  }
+
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Scrollbar styling */
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Aspect ratio utility */
+  .aspect-4-5 {
+    aspect-ratio: 4 / 5;
   }
 }

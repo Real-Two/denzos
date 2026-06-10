@@ -1,0 +1,245 @@
+[
+  {
+    "id": "1",
+    "slug": "amber-noir",
+    "name": "Amber Noir",
+    "tagline": "The scent of gilded evenings",
+    "category": "edp",
+    "featured": true,
+    "price": 4800,
+    "salePrice": 2400,
+    "sizes": [
+      { "ml": 50, "price": 4800, "salePrice": 2400 },
+      { "ml": 100, "price": 7200, "salePrice": 3600 }
+    ],
+    "notes": {
+      "top": ["Saffron", "Black Pepper", "Bergamot"],
+      "heart": ["Oud", "Rose Absolute", "Jasmine Sambac"],
+      "base": ["Sandalwood", "Amber", "Musk"]
+    },
+    "description": "Amber Noir is a tribute to the opulent evenings of Rajasthan. A golden saffron accord opens the composition with warmth and intrigue, while a heart of Indian oud — aged for over seven years — lends an unmistakable depth. The dry-down is a long-lasting embrace of creamy sandalwood and warm amber. For those who believe that a fragrance should tell a story.",
+    "images": ["/images/products/product-1.jpg", "/images/products/product-1-model.jpg"],
+    "reviews": [
+      { "author": "Priya S.", "location": "Mumbai", "rating": 5, "body": "Absolutely stunning. Amber Noir is everything I didn't know I needed. The oud is rich but not overpowering, and the saffron opening is pure luxury." },
+      { "author": "Rahul M.", "location": "Delhi", "rating": 5, "body": "Got compliments all evening at a wedding. This is genuinely world-class quality at an Indian price point." },
+      { "author": "Anjali K.", "location": "Bangalore", "rating": 4, "body": "Beautiful scent, great longevity. The bottle is also incredibly elegant. Will be ordering again." }
+    ]
+  },
+  {
+    "id": "2",
+    "slug": "jasmine-d-inde",
+    "name": "Jasmine d'Inde",
+    "tagline": "A garden at first light",
+    "category": "edp",
+    "featured": true,
+    "price": 3800,
+    "salePrice": 1900,
+    "sizes": [
+      { "ml": 50, "price": 3800, "salePrice": 1900 },
+      { "ml": 100, "price": 5800, "salePrice": 2900 }
+    ],
+    "notes": {
+      "top": ["Green Leaves", "Neroli", "Mandarin"],
+      "heart": ["Jasmine Sambac", "Tuberose", "Ylang Ylang"],
+      "base": ["Vetiver", "Sandalwood", "White Musk"]
+    },
+    "description": "Inspired by the jasmine gardens of Madurai, this EDP captures the transient magic of a flower at its most fragrant — just before dawn. Soliflore in spirit but layered in execution, Jasmine d'Inde is a study in feminine grace and botanical precision. The earthy vetiver base grounds the floral heart, ensuring this is never sweet but always radiant.",
+    "images": ["/images/products/product-2.jpg"],
+    "reviews": [
+      { "author": "Sunita T.", "location": "Hyderabad", "rating": 5, "body": "This smells exactly like fresh mogra from my grandmother's garden. It made me emotional. Truly special." },
+      { "author": "Meera R.", "location": "Pune", "rating": 5, "body": "Light, floral, and incredibly long-lasting. I wore it to a formal lunch and got so many questions about what I was wearing." }
+    ]
+  },
+  {
+    "id": "3",
+    "slug": "oud-maharani",
+    "name": "Oud Maharani",
+    "tagline": "Power, grace, and legacy",
+    "category": "edp",
+    "featured": true,
+    "price": 6500,
+    "salePrice": 3250,
+    "sizes": [
+      { "ml": 50, "price": 6500, "salePrice": 3250 },
+      { "ml": 100, "price": 9800, "salePrice": 4900 }
+    ],
+    "notes": {
+      "top": ["Saffron", "Cardamom", "Incense"],
+      "heart": ["Cambodian Oud", "Damask Rose", "Frankincense"],
+      "base": ["Aged Sandalwood", "Patchouli", "Labdanum"]
+    },
+    "description": "Oud Maharani is our most ambitious creation — a fragrance worthy of royalty. We source our Cambodian oud from a single estate, and the Damask rose is steam-distilled to order. Rich, ceremonial, and unforgettable. This is not a fragrance you wear; it is one you inhabit.",
+    "images": ["/images/products/product-4.jpg"],
+    "reviews": [
+      { "author": "Vikram P.", "location": "Jaipur", "rating": 5, "body": "The finest Indian perfume I have ever owned. Bar none. The oud is incredible — smoky but not harsh." },
+      { "author": "Deepa N.", "location": "Chennai", "rating": 5, "body": "I bought this as a wedding gift for my sister and she absolutely loves it. Presentation was perfect too." }
+    ]
+  },
+  {
+    "id": "4",
+    "slug": "velvet-sandalwood",
+    "name": "Velvet Sandalwood",
+    "tagline": "Warm, creamy, unmistakably Indian",
+    "category": "edp",
+    "featured": true,
+    "price": 3200,
+    "salePrice": 1600,
+    "sizes": [
+      { "ml": 50, "price": 3200, "salePrice": 1600 },
+      { "ml": 100, "price": 4800, "salePrice": 2400 }
+    ],
+    "notes": {
+      "top": ["Coconut Water", "Cardamom", "Bergamot"],
+      "heart": ["Mysore Sandalwood", "Cedarwood", "Iris"],
+      "base": ["Vanilla", "Tonka Bean", "Soft Musk"]
+    },
+    "description": "A love letter to Mysore sandalwood — one of the world's most precious aromatic woods. Velvet Sandalwood is warm without being heavy, creamy without being sweet. The coconut water opening adds a contemporary freshness before giving way to an exceptionally smooth sandalwood heart. An everyday luxury.",
+    "images": ["/images/products/product-2.jpg"],
+    "reviews": [
+      { "author": "Kavita A.", "location": "Mumbai", "rating": 4, "body": "Perfect office scent. Subtle but present. My colleagues keep asking what I'm wearing." },
+      { "author": "Arjun S.", "location": "Bangalore", "rating": 5, "body": "The sandalwood here is genuine and rich. You can tell real ingredients were used. Highly recommend." }
+    ]
+  },
+  {
+    "id": "5",
+    "slug": "rose-e-hind",
+    "name": "Rose-e-Hind",
+    "tagline": "A thousand petals, one soul",
+    "category": "edp",
+    "featured": false,
+    "price": 4200,
+    "salePrice": 2100,
+    "sizes": [
+      { "ml": 50, "price": 4200, "salePrice": 2100 },
+      { "ml": 100, "price": 6200, "salePrice": 3100 }
+    ],
+    "notes": {
+      "top": ["Lychee", "Saffron", "Pink Pepper"],
+      "heart": ["Indian Rose Absolute", "Geranium", "Peony"],
+      "base": ["Oud", "Musk", "Vetiver"]
+    },
+    "description": "Named after the ancient Persian name for India, Rose-e-Hind celebrates the Indian rose absolute — more complex, more nuanced, and more alive than any other rose in the world. The lychee and saffron opener creates an immediate sense of richness before the rose heart blooms in full.",
+    "images": ["/images/products/product-1.jpg"],
+    "reviews": [
+      { "author": "Pooja V.", "location": "Surat", "rating": 5, "body": "This is the rose perfume I have been searching for my entire life. It's not just rose — it's everything." }
+    ]
+  },
+  {
+    "id": "6",
+    "slug": "discovery-set-i",
+    "name": "Discovery Set I",
+    "tagline": "Find your signature scent",
+    "category": "tester",
+    "featured": false,
+    "price": 1200,
+    "salePrice": 600,
+    "sizes": [
+      { "ml": 5, "price": 1200, "salePrice": 600 }
+    ],
+    "notes": {
+      "top": ["Varies by fragrance"],
+      "heart": ["5 signature Denzos scents"],
+      "base": ["Each 2ml in a numbered vial"]
+    },
+    "description": "Not sure where to begin? Our Discovery Set I includes 5 × 2ml vials of our core collection — Amber Noir, Jasmine d'Inde, Oud Maharani, Velvet Sandalwood, and Rose-e-Hind. Each vial is numbered and includes a scent profile card. The perfect introduction to Denzos.",
+    "images": ["/images/categories/testers.jpg"],
+    "reviews": [
+      { "author": "Tanvi M.", "location": "Kolkata", "rating": 5, "body": "The best way to try a luxury perfume brand without committing to a full bottle. I ended up ordering full sizes of three of them!" }
+    ]
+  },
+  {
+    "id": "7",
+    "slug": "vetiver-noir",
+    "name": "Vetiver Noir",
+    "tagline": "Earth, smoke, and quiet power",
+    "category": "edp",
+    "featured": false,
+    "price": 3600,
+    "salePrice": 1800,
+    "sizes": [
+      { "ml": 50, "price": 3600, "salePrice": 1800 },
+      { "ml": 100, "price": 5400, "salePrice": 2700 }
+    ],
+    "notes": {
+      "top": ["Grapefruit", "Black Tea", "Juniper Berry"],
+      "heart": ["Haitian Vetiver", "Birch", "Leather"],
+      "base": ["Smoked Oak", "Tonka Bean", "Dark Musk"]
+    },
+    "description": "Vetiver Noir is for those who dress without looking and fill a room without trying. A smoky, earthy vetiver composition with an unexpected black tea accord at its heart — modern and uncompromising. This is a fragrance for the quiet confidence of those who know exactly who they are.",
+    "images": ["/images/products/product-4.jpg"],
+    "reviews": [
+      { "author": "Rohit D.", "location": "Ahmedabad", "rating": 5, "body": "This is my new signature. The vetiver is deep and complex. Incredible projection for 6+ hours." }
+    ]
+  },
+  {
+    "id": "8",
+    "slug": "celebration-gift-box",
+    "name": "Celebration Gift Box",
+    "tagline": "The gift of extraordinary scent",
+    "category": "gift-box",
+    "featured": false,
+    "price": 8500,
+    "salePrice": 4250,
+    "sizes": [
+      { "ml": 0, "price": 8500, "salePrice": 4250 }
+    ],
+    "notes": {
+      "top": ["Two full-size EDPs"],
+      "heart": ["Hand-tied satin ribbon"],
+      "base": ["Luxury gift packaging"]
+    },
+    "description": "Our Celebration Gift Box contains two full-size 50ml EDPs of your choice, presented in our signature matte ivory and bronze gift packaging with hand-tied satin ribbon. A card with a handwritten message (of your choice) is included. The most thoughtful gift you can give.",
+    "images": ["/images/products/product-3.jpg"],
+    "reviews": [
+      { "author": "Sheetal B.", "location": "Pune", "rating": 5, "body": "The packaging is absolutely stunning. Gave this as a wedding gift and the bride was overwhelmed. Will definitely be ordering again." }
+    ]
+  },
+  {
+    "id": "9",
+    "slug": "mogra-dreams",
+    "name": "Mogra Dreams",
+    "tagline": "The sweetest memory",
+    "category": "edp",
+    "featured": false,
+    "price": 3400,
+    "salePrice": 1700,
+    "sizes": [
+      { "ml": 50, "price": 3400, "salePrice": 1700 },
+      { "ml": 100, "price": 5200, "salePrice": 2600 }
+    ],
+    "notes": {
+      "top": ["Fresh Mogra", "Bergamot", "Lime"],
+      "heart": ["Indian Jasmine", "Gardenia", "Coconut"],
+      "base": ["Sandalwood", "Amber", "Soft Musk"]
+    },
+    "description": "Mogra Dreams captures that singular moment — a string of fresh mogra flowers in your hair, the warmth of the afternoon sun on your skin. It is intimate, joyful, and deeply nostalgic. A fragrance that feels like home.",
+    "images": ["/images/products/product-2.jpg"],
+    "reviews": [
+      { "author": "Riya P.", "location": "Jaipur", "rating": 5, "body": "This smells like fresh mogra garlands from the flower market. Absolutely beautiful and transported me to my childhood." }
+    ]
+  },
+  {
+    "id": "10",
+    "slug": "saffron-royale",
+    "name": "Saffron Royale",
+    "tagline": "India's most precious spice, bottled",
+    "category": "edp",
+    "featured": false,
+    "price": 5200,
+    "salePrice": 2600,
+    "sizes": [
+      { "ml": 50, "price": 5200, "salePrice": 2600 },
+      { "ml": 100, "price": 7800, "salePrice": 3900 }
+    ],
+    "notes": {
+      "top": ["Kashmir Saffron", "Bergamot", "Cardamom"],
+      "heart": ["Aged Oud", "Rose", "Cinnamon"],
+      "base": ["Labdanum", "Benzoin", "Vanilla"]
+    },
+    "description": "We source our saffron exclusively from the Pampore fields of Kashmir — the finest in the world. Saffron Royale opens with an immediate rush of golden warmth, the spice almost tactile in its presence. As the heart emerges, the aged oud and rose create a classical orientale accord of extraordinary richness.",
+    "images": ["/images/products/product-1.jpg"],
+    "reviews": [
+      { "author": "Gaurav S.", "location": "Mumbai", "rating": 5, "body": "The saffron is absolutely authentic. This is what luxury Indian perfumery should taste like. Worth every rupee." }
+    ]
+  }
+]
