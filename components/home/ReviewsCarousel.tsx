@@ -4,7 +4,7 @@ import { useState, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
 const reviews = [
-  { author: 'Priya S.', location: 'Mumbai', rating: 5, handle: '@priyascents', body: 'Amber Noir is everything I didn\'t know I needed. The oud is rich but not overpowering, and the saffron opening is pure luxury. This is what Indian perfumery should be.', product: 'Amber Noir' },
+  { author: 'Priya S.', location: 'Delhi', rating: 5, handle: '@priyascents', body: 'Amber Noir is everything I didn\'t know I needed. The oud is rich but not overpowering, and the saffron opening is pure luxury. This is what Indian perfumery should be.', product: 'Amber Noir' },
   { author: 'Rahul M.', location: 'New Delhi', rating: 5, handle: '@rahul_aromatic', body: 'Got compliments all evening at a wedding. Denzos is genuinely world-class quality at an Indian price point. Ordered two more bottles as gifts.', product: 'Oud Maharani' },
   { author: 'Anjali K.', location: 'Bangalore', rating: 5, handle: '@anjali.wears', body: 'The Jasmine d\'Inde is exactly what I have been searching for — floral without being sharp, lasting without being overpowering. Absolutely love it.', product: 'Jasmine d\'Inde' },
   { author: 'Vikram P.', location: 'Jaipur', rating: 5, handle: '@vikram_parfum', body: 'The finest Indian perfume I have ever owned. The packaging is stunning, the scent is incredible, and the longevity is remarkable. Truly worth every rupee.', product: 'Oud Maharani' },

@@ -43,7 +43,7 @@ export default function AboutPage() {
               Denzos was founded on a singular belief: that India has one of the world&apos;s richest aromatic heritages, yet no perfume house had truly brought it to the global stage with the craft and elegance it deserved.
             </p>
             <p className="font-inter text-sm text-charcoal-muted leading-relaxed">
-              We began in a small workshop in Mumbai, sourcing directly from growers — saffron from Kashmir, oud from Assam, jasmine absolute from Madurai, and Mysore sandalwood from Karnataka. We visited each farm. We spoke to each grower. We wanted to know our ingredients intimately before bottling them.
+              We began in a small atelier in Delhi, with a simple mission: to create fragrances that felt uncompromisingly Indian in character — bold, layered, and rooted in the subcontinent&apos;s centuries-long love affair with scent.
             </p>
             <p className="font-inter text-sm text-charcoal-muted leading-relaxed">
               What emerged was not just a collection of fragrances, but a manifesto: that the finest perfumery in the world can — and does — come from India.
@@ -65,7 +65,7 @@ export default function AboutPage() {
           {
             number: '01',
             title: 'Ingredient Integrity',
-            body: 'Every ingredient we use is traceable to its source. We work exclusively with ethical growers and distillers who share our commitment to quality and sustainability.',
+            body: 'We are obsessive about what goes into each bottle. Our formulations use only high-quality aromatic compounds — no cheap fillers, no shortcuts. Every note is chosen with intention.',
           },
           {
             number: '02',

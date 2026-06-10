@@ -10,7 +10,7 @@ const faqData = [
   {
     id: 'shipping',
     question: 'How long does shipping take?',
-    answer: 'Standard delivery takes 4–7 business days across India. We ship from Mumbai and use trusted courier partners (Delhivery, Bluedart). Expedited shipping (2–3 days) is available at checkout for an additional charge. You will receive a tracking link once your order is dispatched.',
+    answer: 'Standard delivery takes 4–7 business days across India. We ship from Delhi and use trusted courier partners (Delhivery, Bluedart). Expedited shipping (2–3 days) is available at checkout for an additional charge. You will receive a tracking link once your order is dispatched.',
   },
   {
     id: 'free-shipping',

@@ -18,7 +18,7 @@ export default function BrandStory() {
               Denzos Maison de Parfum was founded with a singular conviction: that India&apos;s extraordinary aromatic heritage deserves a place among the finest perfume houses in the world.
             </p>
             <p className="font-inter text-sm text-charcoal-muted leading-relaxed mb-4">
-              We work directly with growers in Kashmir for our saffron, with harvesters in Assam for our oud, and with distillers in Madurai for our jasmine absolute. Every ingredient is traceable, every fragrance is a story.
+              We work with carefully selected fragrance houses and perfumers who understand our vision — creating compositions that feel authentically Indian in character: warm, layered, and deeply expressive.
             </p>
             <p className="font-inter text-sm text-charcoal-muted leading-relaxed mb-8">
               Cruelty-free, paraben-free, and composed with intention — because the finest things in life are made to be lingered over.

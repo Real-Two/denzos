@@ -15,14 +15,14 @@ export default function Hero() {
           sizes="100vw"
         />
         {/* Gradient overlay — left side for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-ivory/90 via-ivory/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ivory via-ivory/85 to-ivory/20" />
       </div>
 
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-6 py-24 w-full">
         <div className="max-w-lg animate-fade-in">
           <p className="font-inter text-[10px] tracking-[0.35em] uppercase text-charcoal-muted mb-6">
-            Inaugural Collection — 2024
+            Inaugural Collection — 2026
           </p>
           <h1 className="font-cormorant text-6xl md:text-7xl lg:text-8xl font-light text-charcoal leading-[1.05] mb-6">
             Composed<br />

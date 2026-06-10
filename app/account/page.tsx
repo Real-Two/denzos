@@ -34,7 +34,7 @@ const mockAddresses = [
   {
     name: 'Home',
     line1: '42 Napean Sea Road, Flat 7B',
-    city: 'Mumbai',
+    city: 'Delhi',
     state: 'Maharashtra',
     pin: '400006',
     isDefault: true,
@@ -42,7 +42,7 @@ const mockAddresses = [
   {
     name: 'Office',
     line1: '14th Floor, One BKC, Bandra Kurla Complex',
-    city: 'Mumbai',
+    city: 'Delhi',
     state: 'Maharashtra',
     pin: '400051',
     isDefault: false,

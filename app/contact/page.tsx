@@ -62,7 +62,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="font-inter text-xs font-medium text-charcoal">Based In</p>
-                <p className="font-inter text-sm text-charcoal-muted">Mumbai, Maharashtra, India</p>
+                <p className="font-inter text-sm text-charcoal-muted">New Delhi, Delhi, India</p>
               </div>
             </div>
           </div>

@@ -20,7 +20,7 @@
     "description": "Amber Noir is a tribute to the opulent evenings of Rajasthan. A golden saffron accord opens the composition with warmth and intrigue, while a heart of Indian oud — aged for over seven years — lends an unmistakable depth. The dry-down is a long-lasting embrace of creamy sandalwood and warm amber. For those who believe that a fragrance should tell a story.",
     "images": ["/images/products/product-1.jpg", "/images/products/product-1-model.jpg"],
     "reviews": [
-      { "author": "Priya S.", "location": "Mumbai", "rating": 5, "body": "Absolutely stunning. Amber Noir is everything I didn't know I needed. The oud is rich but not overpowering, and the saffron opening is pure luxury." },
+      { "author": "Priya S.", "location": "Delhi", "rating": 5, "body": "Absolutely stunning. Amber Noir is everything I didn't know I needed. The oud is rich but not overpowering, and the saffron opening is pure luxury." },
       { "author": "Rahul M.", "location": "Delhi", "rating": 5, "body": "Got compliments all evening at a wedding. This is genuinely world-class quality at an Indian price point." },
       { "author": "Anjali K.", "location": "Bangalore", "rating": 4, "body": "Beautiful scent, great longevity. The bottle is also incredibly elegant. Will be ordering again." }
     ]
@@ -43,7 +43,7 @@
       "heart": ["Jasmine Sambac", "Tuberose", "Ylang Ylang"],
       "base": ["Vetiver", "Sandalwood", "White Musk"]
     },
-    "description": "Inspired by the jasmine gardens of Madurai, this EDP captures the transient magic of a flower at its most fragrant — just before dawn. Soliflore in spirit but layered in execution, Jasmine d'Inde is a study in feminine grace and botanical precision. The earthy vetiver base grounds the floral heart, ensuring this is never sweet but always radiant.",
+    "description": "Jasmine d'Inde captures the transient magic of jasmine at its most fragrant — delicate, luminous, and deeply Indian in spirit. Soliflore in spirit but layered in execution, it is a study in feminine grace and botanical precision. The earthy vetiver base grounds the floral heart, ensuring this is never sweet but always radiant.",
     "images": ["/images/products/product-2.jpg"],
     "reviews": [
       { "author": "Sunita T.", "location": "Hyderabad", "rating": 5, "body": "This smells exactly like fresh mogra from my grandmother's garden. It made me emotional. Truly special." },
@@ -68,7 +68,7 @@
       "heart": ["Cambodian Oud", "Damask Rose", "Frankincense"],
       "base": ["Aged Sandalwood", "Patchouli", "Labdanum"]
     },
-    "description": "Oud Maharani is our most ambitious creation — a fragrance worthy of royalty. We source our Cambodian oud from a single estate, and the Damask rose is steam-distilled to order. Rich, ceremonial, and unforgettable. This is not a fragrance you wear; it is one you inhabit.",
+    "description": "Oud Maharani is our most ambitious creation — a fragrance worthy of royalty. The oud accord at its heart is smoky and deep, paired with a lush Damask rose that adds a ceremonial, almost sacred quality. Rich, unforgettable, and designed for those who command a room without trying. This is not a fragrance you wear; it is one you inhabit.",
     "images": ["/images/products/product-4.jpg"],
     "reviews": [
       { "author": "Vikram P.", "location": "Jaipur", "rating": 5, "body": "The finest Indian perfume I have ever owned. Bar none. The oud is incredible — smoky but not harsh." },
@@ -96,7 +96,7 @@
     "description": "A love letter to Mysore sandalwood — one of the world's most precious aromatic woods. Velvet Sandalwood is warm without being heavy, creamy without being sweet. The coconut water opening adds a contemporary freshness before giving way to an exceptionally smooth sandalwood heart. An everyday luxury.",
     "images": ["/images/products/product-2.jpg"],
     "reviews": [
-      { "author": "Kavita A.", "location": "Mumbai", "rating": 4, "body": "Perfect office scent. Subtle but present. My colleagues keep asking what I'm wearing." },
+      { "author": "Kavita A.", "location": "Delhi", "rating": 4, "body": "Perfect office scent. Subtle but present. My colleagues keep asking what I'm wearing." },
       { "author": "Arjun S.", "location": "Bangalore", "rating": 5, "body": "The sandalwood here is genuine and rich. You can tell real ingredients were used. Highly recommend." }
     ]
   },
@@ -236,10 +236,10 @@
       "heart": ["Aged Oud", "Rose", "Cinnamon"],
       "base": ["Labdanum", "Benzoin", "Vanilla"]
     },
-    "description": "We source our saffron exclusively from the Pampore fields of Kashmir — the finest in the world. Saffron Royale opens with an immediate rush of golden warmth, the spice almost tactile in its presence. As the heart emerges, the aged oud and rose create a classical orientale accord of extraordinary richness.",
+    "description": "Saffron Royale is a bold, luminous celebration of India's most precious spice. The opening is an immediate rush of golden warmth — the saffron accord rich and almost tactile in its presence. As the heart emerges, the aged oud and rose create a classical orientale composition of extraordinary depth and richness. For those who wear their confidence like a crown.",
     "images": ["/images/products/product-1.jpg"],
     "reviews": [
-      { "author": "Gaurav S.", "location": "Mumbai", "rating": 5, "body": "The saffron is absolutely authentic. This is what luxury Indian perfumery should taste like. Worth every rupee." }
+      { "author": "Gaurav S.", "location": "Delhi", "rating": 5, "body": "The saffron is absolutely authentic. This is what luxury Indian perfumery should taste like. Worth every rupee." }
     ]
   }
 ]
