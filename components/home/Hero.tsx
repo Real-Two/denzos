@@ -7,8 +7,8 @@ export default function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/hero/hero-main.jpg"
-          alt="Denzos — Maison de Parfum"
+          src="/images/hero/hero.png"
+          alt="Denzos Maison de Parfum"
           fill
           priority
           className="object-cover"
