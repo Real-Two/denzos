@@ -5,7 +5,7 @@ const categories = [
   {
     label: 'Full Fragrances',
     sub: 'Eau de Parfum',
-    href: '/shop?category=edp',
+    href: '/shop?filter=full-size',
     image: '/images/categories/edp.jpg',
     description: 'Signature scents crafted for the long-lasting impression',
   },
@@ -19,7 +19,7 @@ const categories = [
   {
     label: 'Gift Boxes',
     sub: 'For Someone Special',
-    href: '/shop?category=gift-box',
+    href: '/shop?filter=gift-boxes',
     image: '/images/categories/giftbox.jpg',
     description: 'Beautifully presented gifts for every occasion',
   },

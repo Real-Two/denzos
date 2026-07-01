@@ -7,11 +7,12 @@ import products from '@/data/products.json';
 import ProductCard, { Product } from '@/components/product/ProductCard';
 import Link from 'next/link';
 
-type FilterMode = 'all' | 'full-size' | 'testers' | 'warm' | 'fresh' | 'woody' | 'floral';
+type FilterMode = 'all' | 'full-size' | 'gift-boxes' | 'testers' | 'warm' | 'fresh' | 'woody' | 'floral';
 
 const filterTabs: { label: string; value: FilterMode }[] = [
   { label: 'All', value: 'all' },
   { label: 'Full Size', value: 'full-size' },
+  { label: 'Gift Boxes', value: 'gift-boxes' },
   { label: 'Discovery Testers', value: 'testers' },
   { label: 'Warm & Oriental', value: 'warm' },
   { label: 'Fresh & Clean', value: 'fresh' },
@@ -37,7 +38,9 @@ function ShopContent() {
       case 'all':
         return products;
       case 'full-size':
-        return products.filter(p => p.sizes.some(s => s.ml === 50 || s.ml === 100));
+        return products.filter(p => p.sizes.some(s => s.ml === 50));
+      case 'gift-boxes':
+        return products.filter(p => p.sizes.some(s => s.ml === 100));
       case 'testers':
         return products.filter(p => p.sizes.some(s => s.ml === 10));
       case 'warm':
@@ -110,9 +113,20 @@ function ShopContent() {
 
       {/* Grid — 3 col desktop, 2 tablet, 1 mobile */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-        {filtered.map(product => (
-          <ProductCard key={product.id} product={product as unknown as Product} showSalePrice={true} />
-        ))}
+        {filtered.map(product => {
+          let preferSize = 50;
+          if (activeFilter === 'testers') preferSize = 10;
+          if (activeFilter === 'gift-boxes') preferSize = 100;
+
+          return (
+            <ProductCard 
+              key={product.id} 
+              product={product as unknown as Product} 
+              showSalePrice={true}
+              preferSize={preferSize}
+            />
+          );
+        })}
       </div>
 
       {filtered.length === 0 && (

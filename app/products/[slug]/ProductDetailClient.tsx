@@ -141,7 +141,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                   src={selectedImage}
                   alt={product.name}
                   fill
-                  className="object-contain transition-all duration-500 p-6"
+                  className="object-cover transition-all duration-500"
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
@@ -169,7 +169,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                       }`}
                       title={`${size.ml}ml${size.label ? ' — ' + size.label : ''}`}
                     >
-                      <Image src={thumbSrc} alt={`${size.ml}ml`} fill className="object-contain p-2" />
+                      <Image src={thumbSrc} alt={`${size.ml}ml`} fill className="object-cover" />
                       <span
                         className="absolute bottom-0 left-0 right-0 text-center font-inter text-[8px] tracking-wide uppercase py-0.5"
                         style={{ backgroundColor: isActive ? `${product.theme.accent_hex}` : 'rgba(30,30,30,0.65)', color: '#FAF8F4' }}

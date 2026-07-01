@@ -39,15 +39,27 @@ export interface Product {
   };
 }
 
-export default function ProductCard({ product, showSalePrice = false }: { product: Product; showSalePrice?: boolean }) {
+export default function ProductCard({ 
+  product, 
+  showSalePrice = false,
+  preferSize 
+}: { 
+  product: Product; 
+  showSalePrice?: boolean;
+  preferSize?: number;
+}) {
   const [hovered, setHovered] = useState(false);
-  const [imageIndex, setImageIndex] = useState(0);
   const { addItem } = useCart();
   const { toggleWishlist, isWishlisted } = useWishlist();
 
-  // Default to the 50ml size for card display, fallback to first size
-  const displaySize = product.sizes.find(s => s.ml === 50) ?? product.sizes[0];
-  const defaultCartSize = product.sizes.find(s => s.ml === 50) ?? product.sizes[0];
+  // Default to the preferred size (from filter) or 50ml size for card display
+  const displaySize = preferSize 
+    ? (product.sizes.find(s => s.ml === preferSize) ?? product.sizes[0])
+    : (product.sizes.find(s => s.ml === 50) ?? product.sizes[0]);
+  const defaultCartSize = displaySize;
+
+  const mainImage = displaySize.image ?? product.images[0];
+  const hoverImage = product.images.find(img => img !== mainImage) ?? mainImage;
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -66,23 +78,17 @@ export default function ProductCard({ product, showSalePrice = false }: { produc
   return (
     <div
       className="group relative"
-      onMouseEnter={() => {
-        setHovered(true);
-        if (product.images.length > 1) setImageIndex(1);
-      }}
-      onMouseLeave={() => {
-        setHovered(false);
-        setImageIndex(0);
-      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
       {/* Image container */}
       <Link href={`/products/${product.slug}`} className="block">
         <div className="relative aspect-4-5 overflow-hidden bg-bone">
           <Image
-            src={product.images[imageIndex]}
+            src={hovered ? hoverImage : mainImage}
             alt={product.name}
             fill
-            className="object-contain transition-all duration-700 group-hover:scale-[1.03] p-4"
+            className="object-cover transition-all duration-700 group-hover:scale-[1.03]"
             sizes="(max-width: 768px) 50vw, 25vw"
           />
 

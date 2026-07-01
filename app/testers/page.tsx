@@ -53,10 +53,10 @@ export default function TestersPage() {
                   <Link href={`/products/${product.slug}`}>
                     <div className="relative w-28 h-36 bg-bone overflow-hidden flex-shrink-0 hover:opacity-90 transition-opacity">
                       <Image
-                        src={product.images[0]}
+                        src={testerSize.image ?? product.images[0]}
                         alt={product.name}
                         fill
-                        className="object-contain p-2"
+                        className="object-cover"
                         sizes="112px"
                       />
                     </div>
@@ -134,19 +134,21 @@ export default function TestersPage() {
 
           {/* Preview of all 5 bottles */}
           <div className="flex justify-center gap-3 mb-10 flex-wrap">
-            {products.map(p => (
+            {products.map(p => {
+              const pTesterSize = p.sizes.find(s => s.ml === 10);
+              return (
               <Link key={p.id} href={`/products/${p.slug}`}>
                 <div className="relative w-16 h-20 bg-ivory overflow-hidden hover:opacity-80 transition-opacity">
                   <Image
-                    src={p.images[0]}
+                    src={pTesterSize?.image ?? p.images[0]}
                     alt={p.name}
                     fill
-                    className="object-contain p-1"
+                    className="object-cover"
                     sizes="64px"
                   />
                 </div>
               </Link>
-            ))}
+            )})}
           </div>
 
           <Link href="/shop" className="btn-primary">
