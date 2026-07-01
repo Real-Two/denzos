@@ -12,6 +12,7 @@ export interface ProductSize {
   price: number;
   mrp?: number;
   label?: string;
+  image?: string;
 }
 
 export interface Product {

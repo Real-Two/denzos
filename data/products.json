@@ -8,9 +8,9 @@
     "category": "EDP",
     "featured": true,
     "sizes": [
-      { "ml": 10, "price": 699, "label": "Tester" },
-      { "ml": 50, "price": 2199, "mrp": 4399 },
-      { "ml": 100, "price": 3499, "mrp": 6999 }
+      { "ml": 10, "price": 699, "label": "Tester", "image": "/products/amber_royale_10ml.jpeg" },
+      { "ml": 50, "price": 2199, "mrp": 4399, "image": "/products/amber_royale_50ml.jpeg" },
+      { "ml": 100, "price": 3499, "mrp": 6999, "image": "/products/amber_royale_100ml.jpeg" }
     ],
     "notes": {
       "top": ["Saffron", "Cardamom", "Bergamot"],
@@ -26,7 +26,7 @@
       "bg_accent": "rgba(196, 154, 46, 0.06)",
       "label_image": "amber_royale.jpeg"
     },
-    "images": ["/products/amber_royale.jpeg"],
+    "images": ["/products/amber_royale_50ml.jpeg", "/products/amber_royale_10ml.jpeg", "/products/amber_royale_100ml.jpeg"],
     "reviews": [
       { "author": "Priya S.", "location": "Delhi", "rating": 5, "body": "Amber Royale is everything I didn't know I needed. The oud is rich but not overpowering, and the saffron opening is pure luxury. This is what Indian perfumery should be." },
       { "author": "Rahul M.", "location": "Delhi", "rating": 5, "body": "Got compliments all evening at a wedding. Genuinely world-class quality at an Indian price point. Ordered two more as gifts." },
@@ -42,9 +42,9 @@
     "category": "EDP",
     "featured": false,
     "sizes": [
-      { "ml": 10, "price": 599, "label": "Tester" },
-      { "ml": 50, "price": 1799, "mrp": 3599 },
-      { "ml": 100, "price": 2999, "mrp": 5999 }
+      { "ml": 10, "price": 599, "label": "Tester", "image": "/products/frosted_air_10ml.jpeg" },
+      { "ml": 50, "price": 1799, "mrp": 3599, "image": "/products/frosted_air_50ml.jpeg" },
+      { "ml": 100, "price": 2999, "mrp": 5999, "image": "/products/frosted_air_100ml.jpeg" }
     ],
     "notes": {
       "top": ["Yuzu", "Mint", "Icy Accord"],
@@ -60,7 +60,7 @@
       "bg_accent": "rgba(126, 200, 216, 0.05)",
       "label_image": "frosted_air.jpeg"
     },
-    "images": ["/products/frosted_air.jpeg"],
+    "images": ["/products/frosted_air_50ml.jpeg", "/products/frosted_air_10ml.jpeg", "/products/frosted_air_100ml.jpeg"],
     "reviews": [
       { "author": "Kavita A.", "location": "Delhi", "rating": 5, "body": "Perfect for summer mornings. The yuzu and mint opening is incredibly refreshing without being sharp. Lasts well into the afternoon." },
       { "author": "Arjun S.", "location": "Bangalore", "rating": 5, "body": "Finally a fresh fragrance that doesn't smell synthetic. The cedarwood base is what makes this — gives it real depth." }
@@ -75,9 +75,9 @@
     "category": "EDP",
     "featured": true,
     "sizes": [
-      { "ml": 10, "price": 649, "label": "Tester" },
-      { "ml": 50, "price": 1999, "mrp": 3999 },
-      { "ml": 100, "price": 3199, "mrp": 6399 }
+      { "ml": 10, "price": 649, "label": "Tester", "image": "/products/noir_floral_10ml.jpeg" },
+      { "ml": 50, "price": 1999, "mrp": 3999, "image": "/products/noir_floral_50ml.jpeg" },
+      { "ml": 100, "price": 3199, "mrp": 6399, "image": "/products/noir_floral_100ml.jpeg" }
     ],
     "notes": {
       "top": ["Black Rose", "Tuberose", "Bergamot"],
@@ -93,7 +93,7 @@
       "bg_accent": "rgba(196, 154, 46, 0.04)",
       "label_image": "noir_floral.jpeg"
     },
-    "images": ["/products/noir_floral.jpeg"],
+    "images": ["/products/noir_floral_50ml.jpeg", "/products/noir_floral_10ml.jpeg", "/products/noir_floral_100ml.jpeg"],
     "reviews": [
       { "author": "Sunita T.", "location": "Hyderabad", "rating": 5, "body": "The black rose accord is unlike anything I've smelled in an Indian brand. Dark, complex, and deeply elegant. This is my new evening fragrance." },
       { "author": "Meera R.", "location": "Pune", "rating": 5, "body": "The patchouli base keeps it grounded. Not a typical sweet floral at all — it has real character and incredible projection." }
@@ -108,9 +108,9 @@
     "category": "EDP",
     "featured": true,
     "sizes": [
-      { "ml": 10, "price": 799, "label": "Tester" },
-      { "ml": 50, "price": 2499, "mrp": 4999 },
-      { "ml": 100, "price": 3999, "mrp": 7999 }
+      { "ml": 10, "price": 799, "label": "Tester", "image": "/products/oud_signature_10ml.jpeg" },
+      { "ml": 50, "price": 2499, "mrp": 4999, "image": "/products/oud_signature_50ml.jpeg" },
+      { "ml": 100, "price": 3999, "mrp": 7999, "image": "/products/oud_signature_100ml.jpeg" }
     ],
     "notes": {
       "top": ["Oud", "Smoky Accord", "Frankincense"],
@@ -126,7 +126,7 @@
       "bg_accent": "rgba(139, 105, 20, 0.07)",
       "label_image": "oud_signature.jpeg"
     },
-    "images": ["/products/oud_signature.jpeg"],
+    "images": ["/products/oud_signature_50ml.jpeg", "/products/oud_signature_10ml.jpeg", "/products/oud_signature_100ml.jpeg"],
     "reviews": [
       { "author": "Vikram P.", "location": "Jaipur", "rating": 5, "body": "The finest oud fragrance from an Indian house I've tried. The smokiness is there but it's restrained — this smells like a private ceremony, not a marketplace." },
       { "author": "Deepa N.", "location": "Chennai", "rating": 5, "body": "Bought this as a wedding gift. The rose and leather in the heart notes give it a gravitas that makes it feel like a true luxury." }
@@ -141,9 +141,9 @@
     "category": "EDP",
     "featured": true,
     "sizes": [
-      { "ml": 10, "price": 649, "label": "Tester" },
-      { "ml": 50, "price": 1999, "mrp": 3999 },
-      { "ml": 100, "price": 3199, "mrp": 6399 }
+      { "ml": 10, "price": 649, "label": "Tester", "image": "/products/woody_intense_10ml.jpeg" },
+      { "ml": 50, "price": 1999, "mrp": 3999, "image": "/products/woody_intense_50ml.jpeg" },
+      { "ml": 100, "price": 3199, "mrp": 6399, "image": "/products/woody_intense_100ml.jpeg" }
     ],
     "notes": {
       "top": ["Pine Needle", "Cypress", "Black Pepper"],
@@ -159,7 +159,7 @@
       "bg_accent": "rgba(122, 106, 58, 0.06)",
       "label_image": "woody_intense.jpeg"
     },
-    "images": ["/products/woody_intense.jpeg"],
+    "images": ["/products/woody_intense_50ml.jpeg", "/products/woody_intense_10ml.jpeg", "/products/woody_intense_100ml.jpeg"],
     "reviews": [
       { "author": "Rohit D.", "location": "Ahmedabad", "rating": 5, "body": "This is my new signature. The pine and pepper opening is bracing, then it settles into the most beautiful cedar vetiver heart. Incredible sillage." },
       { "author": "Gaurav S.", "location": "Delhi", "rating": 4, "body": "The oakmoss base is what sets this apart from everything else in the Indian market. Deep, real, and long-lasting. Highly recommend for men." }

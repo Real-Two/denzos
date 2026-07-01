@@ -14,6 +14,7 @@ export interface ProductSize {
   price: number;
   mrp?: number;
   label?: string;
+  image?: string;
 }
 
 interface Review {
@@ -49,11 +50,12 @@ export interface Product {
 }
 
 export default function ProductDetailClient({ product }: { product: Product }) {
-  const [selectedSize, setSelectedSize] = useState<ProductSize>(
-    // Default to 50ml for initial selection
-    product.sizes.find(s => s.ml === 50) ?? product.sizes[0]
+  const defaultSize = product.sizes.find(s => s.ml === 50) ?? product.sizes[0];
+  const [selectedSize, setSelectedSize] = useState<ProductSize>(defaultSize);
+  // Derive current hero image: prefer the size-specific image, fall back to images array
+  const [selectedImage, setSelectedImage] = useState(
+    defaultSize.image ?? product.images[0]
   );
-  const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [addedToCart, setAddedToCart] = useState(false);
   const { addItem } = useCart();
@@ -136,7 +138,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                   />
                 )}
                 <Image
-                  src={product.images[selectedImage]}
+                  src={selectedImage}
                   alt={product.name}
                   fill
                   className="object-contain transition-all duration-500 p-6"
@@ -150,22 +152,35 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                   </span>
                 </div>
               </div>
-              {/* Thumbnails */}
-              {product.images.length > 1 && (
-                <div className="flex gap-2">
-                  {product.images.map((img, i) => (
+              {/* Size thumbnails — click to preview each size's label art */}
+              <div className="flex gap-2">
+                {product.sizes.map(size => {
+                  const thumbSrc = size.image ?? product.images[0];
+                  const isActive = selectedImage === thumbSrc;
+                  return (
                     <button
-                      key={i}
-                      onClick={() => setSelectedImage(i)}
-                      className={`relative w-20 h-24 overflow-hidden border-[0.5px] transition-all ${
-                        selectedImage === i ? 'border-bronze' : 'border-bronze/20 opacity-60 hover:opacity-100'
+                      key={size.ml}
+                      onClick={() => {
+                        setSelectedImage(thumbSrc);
+                        setSelectedSize(size);
+                      }}
+                      className={`relative w-20 h-24 overflow-hidden border-[0.5px] transition-all flex flex-col ${
+                        isActive ? 'border-bronze' : 'border-bronze/20 opacity-60 hover:opacity-100'
                       }`}
+                      title={`${size.ml}ml${size.label ? ' — ' + size.label : ''}`}
                     >
-                      <Image src={img} alt={`View ${i + 1}`} fill className="object-contain p-2" />
+                      <Image src={thumbSrc} alt={`${size.ml}ml`} fill className="object-contain p-2" />
+                      <span
+                        className="absolute bottom-0 left-0 right-0 text-center font-inter text-[8px] tracking-wide uppercase py-0.5"
+                        style={{ backgroundColor: isActive ? `${product.theme.accent_hex}` : 'rgba(30,30,30,0.65)', color: '#FAF8F4' }}
+                      >
+                        {size.ml}ml
+                      </span>
                     </button>
-                  ))}
-                </div>
-              )}
+                  );
+                })}
+              </div>
+
             </div>
 
             {/* Product info */}
@@ -219,7 +234,10 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                     return (
                       <button
                         key={size.ml}
-                        onClick={() => setSelectedSize(size)}
+                        onClick={() => {
+                      setSelectedSize(size);
+                      if (size.image) setSelectedImage(size.image);
+                    }}
                         className="border-[0.5px] px-5 py-3 font-inter text-sm transition-all text-left"
                         style={{
                           borderColor: isActive ? accentHex : `${accentHex}40`,
