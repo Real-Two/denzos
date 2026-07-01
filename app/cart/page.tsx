@@ -11,7 +11,8 @@ export default function CartPage() {
 
   // Upsell products
   const cartIds = items.map(i => i.id);
-  const upsells = products.filter(p => !cartIds.includes(p.id) && p.featured).slice(0, 3);
+  const getProductPrice = (p: typeof products[0]) => (p.sizes.find(s => s.ml === 50) ?? p.sizes[0]).price;
+  const upsells = products.filter(p => !cartIds.includes(p.id)).slice(0, 3);
 
   const shipping = subtotal >= 999 ? 0 : 99;
   const total = subtotal + shipping;
@@ -111,7 +112,7 @@ export default function CartPage() {
                       </div>
                       <div>
                         <p className="font-cormorant text-lg font-light text-charcoal leading-tight">{product.name}</p>
-                        <p className="font-inter text-xs text-bronze mt-1">₹{product.salePrice.toLocaleString('en-IN')}</p>
+                       <p className="font-inter text-xs text-bronze mt-1">₹{getProductPrice(product).toLocaleString('en-IN')}</p>
                       </div>
                     </Link>
                   ))}

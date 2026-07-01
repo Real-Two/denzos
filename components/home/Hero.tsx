@@ -36,8 +36,8 @@ export default function Hero() {
             <Link href="/shop" className="btn-primary">
               Shop Now
             </Link>
-            <Link href="/shop?category=tester" className="btn-ghost">
-              Explore Discovery Sets
+            <Link href="/testers" className="btn-ghost">
+              Discovery Testers
             </Link>
           </div>
           {/* Code callout */}

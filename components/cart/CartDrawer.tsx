@@ -9,9 +9,10 @@ import products from '@/data/products.json';
 export default function CartDrawer() {
   const { items, isDrawerOpen, closeDrawer, removeItem, updateQty, subtotal, totalItems } = useCart();
 
-  // Upsell products (first 2 featured products not in cart)
+  // Upsell: first 2 products not in cart
   const cartIds = items.map(i => i.id);
-  const upsellProducts = products.filter(p => !cartIds.includes(p.id) && p.featured).slice(0, 2);
+  const upsellProducts = products.filter(p => !cartIds.includes(p.id)).slice(0, 2);
+  const getProductPrice = (p: typeof products[0]) => (p.sizes.find(s => s.ml === 50) ?? p.sizes[0]).price;
 
   const freeShippingThreshold = 999;
   const remainingForFreeShipping = Math.max(0, freeShippingThreshold - subtotal);
@@ -145,7 +146,7 @@ export default function CartDrawer() {
                       <Image src={product.images[0]} alt={product.name} fill className="object-cover" />
                     </div>
                     <p className="font-cormorant text-base font-light text-charcoal leading-tight">{product.name}</p>
-                    <p className="font-inter text-xs text-bronze mt-1">₹{product.salePrice.toLocaleString('en-IN')}</p>
+                    <p className="font-inter text-xs text-bronze mt-1">₹{getProductPrice(product).toLocaleString('en-IN')}</p>
                   </Link>
                 ))}
               </div>

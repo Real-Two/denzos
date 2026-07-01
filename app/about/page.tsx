@@ -96,7 +96,7 @@ export default function AboutPage() {
           Start with our Discovery Set — five signature scents to explore before you commit.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
-          <Link href="/shop?category=tester" className="btn-primary">
+          <Link href="/testers" className="btn-primary">
             Explore Discovery Sets
           </Link>
           <Link href="/shop" className="btn-ghost">

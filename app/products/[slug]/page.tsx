@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!product) return { title: 'Not Found' };
   return {
     title: `${product.name} — ${product.tagline}`,
-    description: product.description.slice(0, 160),
+    description: product.scent_story.slice(0, 160),
   };
 }
 

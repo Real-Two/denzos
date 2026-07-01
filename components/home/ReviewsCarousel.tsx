@@ -4,12 +4,12 @@ import { useState, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
 const reviews = [
-  { author: 'Priya S.', location: 'Delhi', rating: 5, handle: '@priyascents', body: 'Amber Noir is everything I didn\'t know I needed. The oud is rich but not overpowering, and the saffron opening is pure luxury. This is what Indian perfumery should be.', product: 'Amber Noir' },
-  { author: 'Rahul M.', location: 'New Delhi', rating: 5, handle: '@rahul_aromatic', body: 'Got compliments all evening at a wedding. Denzos is genuinely world-class quality at an Indian price point. Ordered two more bottles as gifts.', product: 'Oud Maharani' },
-  { author: 'Anjali K.', location: 'Bangalore', rating: 5, handle: '@anjali.wears', body: 'The Jasmine d\'Inde is exactly what I have been searching for — floral without being sharp, lasting without being overpowering. Absolutely love it.', product: 'Jasmine d\'Inde' },
-  { author: 'Vikram P.', location: 'Jaipur', rating: 5, handle: '@vikram_parfum', body: 'The finest Indian perfume I have ever owned. The packaging is stunning, the scent is incredible, and the longevity is remarkable. Truly worth every rupee.', product: 'Oud Maharani' },
-  { author: 'Sunita T.', location: 'Hyderabad', rating: 5, handle: '@sunita_lifestyle', body: 'Mogra Dreams smells exactly like fresh mogra from my grandmother\'s garden. It made me emotional. Denzos has captured something genuinely special here.', product: 'Mogra Dreams' },
-  { author: 'Arjun S.', location: 'Bangalore', rating: 5, handle: '@arjun.scent', body: 'Velvet Sandalwood is my new everyday fragrance. The Mysore sandalwood is the real deal — creamy, warm, and incredibly smooth. Perfect for the office.', product: 'Velvet Sandalwood' },
+  { author: 'Priya S.', location: 'Delhi', rating: 5, handle: '@priyascents', body: 'Amber Royale is everything I didn\'t know I needed. The oud is rich but not overpowering, and the saffron opening is pure luxury. This is what Indian perfumery should be.', product: 'Amber Royale' },
+  { author: 'Rahul M.', location: 'Delhi', rating: 5, handle: '@rahul_aromatic', body: 'Got compliments all evening at a wedding. Denzos is genuinely world-class quality at an Indian price point. Ordered two more bottles as gifts.', product: 'Oud Signature' },
+  { author: 'Anjali K.', location: 'Bangalore', rating: 5, handle: '@anjali.wears', body: 'Noir Floral is exactly what I\'ve been searching for — dark florals without being sharp or sweet. The patchouli base gives it real depth. Absolutely love it.', product: 'Noir Floral' },
+  { author: 'Vikram P.', location: 'Jaipur', rating: 5, handle: '@vikram_parfum', body: 'Oud Signature is the finest oud fragrance from an Indian house I\'ve tried. Ceremonial but wearable. Smoky without being aggressive. Worth every rupee.', product: 'Oud Signature' },
+  { author: 'Kavita A.', location: 'Delhi', rating: 5, handle: '@kavita_scents', body: 'Frosted Air is incredible for summer mornings — crisp yuzu and mint, but with a cedar base that keeps it grounded. Not synthetic at all. Very impressive.', product: 'Frosted Air' },
+  { author: 'Rohit D.', location: 'Ahmedabad', rating: 5, handle: '@rohit.scent', body: 'Woody Intense is my new signature. Pine and pepper, then deep cedar and vetiver. The oakmoss base is what sets this apart — earthy, real, and long-lasting.', product: 'Woody Intense' },
 ];
 
 function StarRating({ rating }: { rating: number }) {

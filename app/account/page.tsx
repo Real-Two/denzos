@@ -16,16 +16,16 @@ const mockOrders = [
     date: 'June 2, 2026',
     status: 'Delivered',
     statusColor: 'text-green-600',
-    total: 2400,
-    items: [{ name: 'Amber Noir', size: '50ml', qty: 1 }],
+    total: 2199,
+    items: [{ name: 'Amber Royale', size: '50ml', qty: 1 }],
   },
   {
     id: '#DZ-00089',
     date: 'May 15, 2026',
     status: 'Delivered',
     statusColor: 'text-green-600',
-    total: 1900,
-    items: [{ name: 'Jasmine d\'Inde', size: '50ml', qty: 1 }],
+    total: 799,
+    items: [{ name: 'Oud Signature', size: '10ml Tester', qty: 1 }],
   },
 ];
 
@@ -198,7 +198,7 @@ export default function AccountPage() {
                     {product.name}
                   </p>
                   <p className="font-inter text-sm text-charcoal-muted mt-0.5">
-                    ₹{product.salePrice.toLocaleString('en-IN')}
+                    ₹{((product.sizes.find((s: {ml: number}) => s.ml === 50) ?? product.sizes[0]) as {price: number}).price.toLocaleString('en-IN')}
                   </p>
                   <div className="mt-2 flex items-center gap-1 font-inter text-[10px] text-bronze">
                     View Product <ChevronRight size={12} />

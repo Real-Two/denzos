@@ -9,14 +9,14 @@ const InstagramIcon = ({ size = 16 }: { size?: number }) => (
 );
 
 
-// Placeholder IG posts — replace with Behold.so widget
+// Placeholder IG posts — replace with Behold.so widget or real IG API
 const igPosts = [
-  { src: '/images/products/product-1.jpg', alt: 'Amber Noir by Denzos' },
-  { src: '/images/products/product-2.jpg', alt: 'Jasmine d\'Inde by Denzos' },
+  { src: '/products/amber_royale.jpeg', alt: 'Amber Royale by Denzos' },
+  { src: '/products/noir_floral.jpeg', alt: 'Noir Floral by Denzos' },
   { src: '/images/categories/edp.jpg', alt: 'Denzos EDP Collection' },
-  { src: '/images/products/product-4.jpg', alt: 'Oud Maharani by Denzos' },
-  { src: '/images/categories/testers.jpg', alt: 'Denzos Discovery Set' },
-  { src: '/images/brand/brand-story.jpg', alt: 'Denzos atelier' },
+  { src: '/products/oud_signature.jpeg', alt: 'Oud Signature by Denzos' },
+  { src: '/products/frosted_air.jpeg', alt: 'Frosted Air by Denzos' },
+  { src: '/products/woody_intense.jpeg', alt: 'Woody Intense by Denzos' },
 ];
 
 export default function InstagramFeed() {

@@ -69,9 +69,9 @@ export default function Footer() {
           <ul className="space-y-3">
             {[
               { href: '/shop', label: 'All Fragrances' },
-              { href: '/shop?category=edp', label: 'Eau de Parfum' },
-              { href: '/shop?category=tester', label: 'Discovery Sets' },
-              { href: '/shop?category=gift-box', label: 'Gift Boxes' },
+              { href: '/shop?filter=full-size', label: 'Full Size EDP' },
+              { href: '/testers', label: 'Discovery Testers' },
+              { href: '/shop?filter=warm', label: 'Warm & Oriental' },
             ].map(link => (
               <li key={link.href}>
                 <Link href={link.href} className="font-inter text-xs text-charcoal-muted hover:text-charcoal transition-colors">

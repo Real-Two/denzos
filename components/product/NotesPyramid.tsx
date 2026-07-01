@@ -6,15 +6,88 @@ export interface Notes {
 
 interface NotesPyramidProps {
   notes: Notes;
+  accentHex?: string;
   productName?: string;
 }
 
-export default function NotesPyramid({ notes, productName }: NotesPyramidProps) {
-  const rows = [
-    { label: 'Top Notes', notes: notes.top, width: 'w-2/5', desc: 'First impression · 15–30 min' },
-    { label: 'Heart Notes', notes: notes.heart, width: 'w-3/5', desc: 'The core · 2–4 hours' },
-    { label: 'Base Notes', notes: notes.base, width: 'w-full', desc: 'The lasting impression · 6+ hours' },
+function hexToRgba(hex: string, alpha: number): string {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+export default function NotesPyramid({ notes, accentHex = '#C49A2E', productName }: NotesPyramidProps) {
+  const bands = [
+    {
+      label: 'Top Notes',
+      sublabel: 'First impression · 15–30 min',
+      notes: notes.top,
+      fillOpacity: 0.22,
+      strokeOpacity: 0.5,
+    },
+    {
+      label: 'Heart Notes',
+      sublabel: 'The soul of the scent · 2–4 hrs',
+      notes: notes.heart,
+      fillOpacity: 0.5,
+      strokeOpacity: 0.7,
+    },
+    {
+      label: 'Base Notes',
+      sublabel: 'The lasting impression · 6+ hrs',
+      notes: notes.base,
+      fillOpacity: 0.85,
+      strokeOpacity: 1,
+    },
   ];
+
+  // SVG pyramid geometry — isosceles triangle
+  // viewBox: 0 0 200 240, apex at top center
+  const svgW = 200;
+  const svgH = 240;
+  const apex = { x: svgW / 2, y: 0 };
+  const baseLeft = { x: 0, y: svgH };
+  const baseRight = { x: svgW, y: svgH };
+
+  // Each band covers 1/3 of the triangle height
+  // Interpolate left/right edge points at 1/3 and 2/3 heights
+  function lerp(a: number, b: number, t: number) {
+    return a + (b - a) * t;
+  }
+
+  const bandPoints = [
+    // Top band: apex → y=H/3
+    {
+      points: [
+        apex,
+        { x: lerp(apex.x, baseLeft.x, 1 / 3), y: lerp(apex.y, baseLeft.y, 1 / 3) },
+        { x: lerp(apex.x, baseRight.x, 1 / 3), y: lerp(apex.y, baseRight.y, 1 / 3) },
+      ],
+    },
+    // Middle band: y=H/3 → y=2H/3
+    {
+      points: [
+        { x: lerp(apex.x, baseLeft.x, 1 / 3), y: lerp(apex.y, baseLeft.y, 1 / 3) },
+        { x: lerp(apex.x, baseLeft.x, 2 / 3), y: lerp(apex.y, baseLeft.y, 2 / 3) },
+        { x: lerp(apex.x, baseRight.x, 2 / 3), y: lerp(apex.y, baseRight.y, 2 / 3) },
+        { x: lerp(apex.x, baseRight.x, 1 / 3), y: lerp(apex.y, baseRight.y, 1 / 3) },
+      ],
+    },
+    // Bottom band: y=2H/3 → base
+    {
+      points: [
+        { x: lerp(apex.x, baseLeft.x, 2 / 3), y: lerp(apex.y, baseLeft.y, 2 / 3) },
+        baseLeft,
+        baseRight,
+        { x: lerp(apex.x, baseRight.x, 2 / 3), y: lerp(apex.y, baseRight.y, 2 / 3) },
+      ],
+    },
+  ];
+
+  function pointsToPath(pts: { x: number; y: number }[]): string {
+    return pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x},${p.y}`).join(' ') + ' Z';
+  }
 
   return (
     <div className="w-full">
@@ -23,58 +96,79 @@ export default function NotesPyramid({ notes, productName }: NotesPyramidProps) 
           Fragrance Profile
         </p>
       )}
-      <h3 className="font-cormorant text-3xl font-light text-charcoal mb-8">
-        How it Smells
+      <h3 className="font-cormorant text-3xl font-light text-charcoal mb-10">
+        Fragrance Notes
       </h3>
 
-      <div className="flex flex-col items-center gap-0">
-        {rows.map((row, index) => (
-          <div key={row.label} className={`${row.width} transition-all duration-300`}>
-            <div
-              className={`border-[0.5px] border-bronze/40 bg-bone px-6 py-5 relative ${
-                index === 0
-                  ? 'rounded-t-none'
-                  : ''
-              }`}
-              style={{
-                borderTop: index > 0 ? 'none' : undefined,
-              }}
-            >
-              {/* Pyramid visual accent */}
-              <div
-                className="absolute left-0 top-0 bottom-0 w-[2px]"
-                style={{ background: `rgba(196, 154, 46, ${0.2 + index * 0.2})` }}
+      <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start">
+        {/* SVG Pyramid */}
+        <div className="flex-shrink-0 flex justify-center">
+          <svg
+            width={svgW}
+            height={svgH}
+            viewBox={`0 0 ${svgW} ${svgH}`}
+            aria-label="Fragrance notes pyramid"
+          >
+            {bandPoints.map((band, i) => (
+              <path
+                key={i}
+                d={pointsToPath(band.points)}
+                fill={hexToRgba(accentHex, bands[i].fillOpacity)}
+                stroke={hexToRgba(accentHex, bands[i].strokeOpacity)}
+                strokeWidth="0.5"
               />
+            ))}
+            {/* Horizontal dividers */}
+            <line
+              x1={lerp(apex.x, baseLeft.x, 1 / 3)}
+              y1={lerp(apex.y, baseLeft.y, 1 / 3)}
+              x2={lerp(apex.x, baseRight.x, 1 / 3)}
+              y2={lerp(apex.y, baseRight.y, 1 / 3)}
+              stroke={hexToRgba(accentHex, 0.4)}
+              strokeWidth="0.5"
+            />
+            <line
+              x1={lerp(apex.x, baseLeft.x, 2 / 3)}
+              y1={lerp(apex.y, baseLeft.y, 2 / 3)}
+              x2={lerp(apex.x, baseRight.x, 2 / 3)}
+              y2={lerp(apex.y, baseRight.y, 2 / 3)}
+              stroke={hexToRgba(accentHex, 0.6)}
+              strokeWidth="0.5"
+            />
+          </svg>
+        </div>
 
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
-                <div>
-                  <p className="font-inter text-[10px] tracking-[0.2em] uppercase text-charcoal-muted">
-                    {row.label}
-                  </p>
-                  <p className="font-inter text-[9px] text-charcoal-muted/60 mt-0.5">{row.desc}</p>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {row.notes.map(note => (
-                    <span
-                      key={note}
-                      className="font-inter text-[11px] text-charcoal bg-ivory border-[0.5px] border-bronze/30 px-3 py-1"
-                    >
-                      {note}
-                    </span>
-                  ))}
-                </div>
+        {/* Notes columns — stacked vertically, aligned with bands */}
+        <div className="flex-1 flex flex-col justify-between gap-6">
+          {bands.map((band) => (
+            <div key={band.label} className="flex flex-col gap-1.5">
+              {/* Label row with accent left border */}
+              <div
+                className="pl-3 mb-1"
+                style={{ borderLeft: `2px solid ${hexToRgba(accentHex, band.strokeOpacity)}` }}
+              >
+                <p
+                  className="font-inter text-[10px] tracking-[0.2em] uppercase font-medium"
+                  style={{ color: hexToRgba(accentHex, band.strokeOpacity) }}
+                >
+                  {band.label}
+                </p>
+                <p className="font-inter text-[9px] text-charcoal-muted/60 mt-0.5">{band.sublabel}</p>
+              </div>
+              {/* Note pills */}
+              <div className="flex flex-wrap gap-1.5">
+                {band.notes.map(note => (
+                  <span
+                    key={note}
+                    className="font-inter text-[11px] text-charcoal bg-ivory border-[0.5px] px-3 py-1"
+                    style={{ borderColor: hexToRgba(accentHex, 0.3) }}
+                  >
+                    {note}
+                  </span>
+                ))}
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Visual pyramid illustration */}
-      <div className="flex justify-center mt-6">
-        <div className="flex flex-col items-center gap-0 opacity-20">
-          <div className="w-0 h-0 border-l-[20px] border-r-[20px] border-b-[12px] border-l-transparent border-r-transparent border-b-bronze" />
-          <div className="w-0 h-0 border-l-[32px] border-r-[32px] border-b-[14px] border-l-transparent border-r-transparent border-b-bronze" />
-          <div className="w-0 h-0 border-l-[48px] border-r-[48px] border-b-[16px] border-l-transparent border-r-transparent border-b-bronze" />
+          ))}
         </div>
       </div>
     </div>

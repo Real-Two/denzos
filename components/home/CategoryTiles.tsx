@@ -11,10 +11,10 @@ const categories = [
   },
   {
     label: 'Discovery Testers',
-    sub: 'Find Your Signature',
-    href: '/shop?category=tester',
+    sub: '10ml — Full Concentration',
+    href: '/testers',
     image: '/images/categories/testers.jpg',
-    description: 'Explore 5 curated fragrances before you commit',
+    description: 'Try all five — full EDP concentration in 10ml. No diluted samples.',
   },
   {
     label: 'Gift Boxes',

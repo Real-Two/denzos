@@ -4,8 +4,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function HowItSmells() {
-  // Use the first featured product as the showcase
-  const heroProduct = products.find(p => p.featured) ?? products[0];
+  // Always showcase Amber Royale as the featured pyramid product
+  const heroProduct = products.find(p => p.slug === 'amber-royale') ?? products[0];
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-20">
@@ -23,18 +23,18 @@ export default function HowItSmells() {
 
           {/* Showcase product */}
           <div className="flex items-center gap-4 mb-8 p-4 border-[0.5px] border-bronze/30 bg-bone">
-            <div className="relative w-16 h-20 flex-shrink-0 overflow-hidden">
+            <div className="relative w-16 h-20 flex-shrink-0 overflow-hidden bg-ivory">
               <Image
                 src={heroProduct.images[0]}
                 alt={heroProduct.name}
                 fill
-                className="object-cover"
+                className="object-contain p-1"
               />
             </div>
             <div>
               <p className="font-inter text-[10px] tracking-[0.2em] uppercase text-charcoal-muted mb-1">Featured</p>
               <p className="font-cormorant text-xl font-light text-charcoal">{heroProduct.name}</p>
-              <p className="font-inter text-xs text-charcoal-muted">{heroProduct.tagline}</p>
+              <p className="font-inter text-xs text-charcoal-muted italic">{heroProduct.tagline}</p>
               <Link href={`/products/${heroProduct.slug}`} className="font-inter text-[11px] text-bronze hover:text-charcoal transition-colors mt-1 inline-block">
                 View fragrance →
               </Link>
@@ -44,7 +44,10 @@ export default function HowItSmells() {
 
         {/* Right — Notes Pyramid */}
         <div>
-          <NotesPyramid notes={heroProduct.notes as unknown as Notes} />
+          <NotesPyramid
+            notes={heroProduct.notes as unknown as Notes}
+            accentHex={heroProduct.theme?.accent_hex ?? '#C49A2E'}
+          />
         </div>
       </div>
     </section>
