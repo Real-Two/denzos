@@ -19,7 +19,8 @@ export default function FeaturedProducts() {
         </div>
         <Link
           href="/shop"
-          className="font-inter text-[11px] tracking-[0.2em] uppercase text-bronze border-b-[0.5px] border-bronze hover:text-charcoal hover:border-charcoal transition-colors pb-0.5 self-start md:self-auto"
+          className="font-inter text-[11px] tracking-[0.2em] uppercase pb-0.5 self-start md:self-auto transition-colors"
+          style={{ color: 'var(--bronze)', borderBottom: '0.5px solid var(--bronze)' }}
         >
           View All
         </Link>

@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: ["selector", '[data-theme="dark"]'],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,7 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ivory: "#FAF8F4",
+        // Static colors for specific use
+        ivory: "#FAF7F0",
+        bone: "#F0EDE5",
         bronze: {
           DEFAULT: "#C49A2E",
           50: "#FBF5E0",
@@ -21,11 +24,17 @@ const config: Config = {
           600: "#7D6118",
         },
         charcoal: {
-          DEFAULT: "#1E1E1E",
-          light: "#3D3D3D",
-          muted: "#6B6B6B",
+          DEFAULT: "#242017",
+          light: "#3D3B28",
+          muted: "#6B6455",
         },
-        bone: "#F0EDE6",
+        // Theme-aware aliases (mapped to CSS vars)
+        bg: "var(--bg)",
+        surface: "var(--surface)",
+        "surface-alt": "var(--surface-alt)",
+        "theme-primary": "var(--text-primary)",
+        "theme-secondary": "var(--text-secondary)",
+        "theme-border": "var(--border)",
       },
       fontFamily: {
         cormorant: ["var(--font-cormorant)", "Cormorant Garamond", "Georgia", "serif"],

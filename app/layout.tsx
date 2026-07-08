@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import { WishlistProvider } from "@/context/WishlistContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -29,18 +30,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-ivory text-charcoal font-inter antialiased">
-        <CartProvider>
-          <WishlistProvider>
-            <AnnouncementBar />
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
-            <CartDrawer />
-            <WhatsAppButton />
-          </WishlistProvider>
-        </CartProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning>
+        <ThemeProvider>
+          <CartProvider>
+            <WishlistProvider>
+              <AnnouncementBar />
+              <Navbar />
+              <main>{children}</main>
+              <Footer />
+              <CartDrawer />
+              <WhatsAppButton />
+            </WishlistProvider>
+          </CartProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

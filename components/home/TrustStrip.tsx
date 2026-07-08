@@ -9,17 +9,17 @@ const trustItems = [
 
 export default function TrustStrip() {
   return (
-    <section className="border-y-[0.5px] border-bronze/25 bg-bone">
+    <section style={{ backgroundColor: 'var(--surface-alt)', borderTop: '0.5px solid var(--border)', borderBottom: '0.5px solid var(--border)' }}>
       <div className="max-w-7xl mx-auto px-6 py-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {trustItems.map(item => (
             <div key={item.label} className="flex items-center gap-4">
-              <div className="flex-shrink-0 w-10 h-10 border-[0.5px] border-bronze/40 flex items-center justify-center">
-                <item.icon size={16} className="text-bronze" />
+              <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center" style={{ border: '0.5px solid rgba(196,154,46,0.4)' }}>
+                <item.icon size={16} style={{ color: 'var(--bronze)' }} />
               </div>
               <div>
-                <p className="font-inter text-xs font-medium text-charcoal">{item.label}</p>
-                <p className="font-inter text-[11px] text-charcoal-muted mt-0.5">{item.sub}</p>
+                <p className="font-inter text-xs font-medium" style={{ color: 'var(--text-primary)' }}>{item.label}</p>
+                <p className="font-inter text-[11px] mt-0.5" style={{ color: 'var(--text-secondary)' }}>{item.sub}</p>
               </div>
             </div>
           ))}

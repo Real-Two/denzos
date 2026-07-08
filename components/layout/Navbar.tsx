@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { ShoppingBag, Heart, Search, Menu, X } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
+import ThemeToggle from '@/components/ui/ThemeToggle';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,25 +23,23 @@ export default function Navbar() {
   const navLinks = [
     { href: '/shop', label: 'Collections' },
     { href: '/about', label: 'About' },
-    { href: '/faq', label: 'Blog' },
+    { href: '/faq', label: 'FAQ' },
   ];
 
   return (
     <>
       <header
-        className={`sticky top-0 z-40 bg-ivory transition-all duration-300 ${
-          scrolled ? 'border-b-[0.5px] border-bronze/30' : 'border-b-[0.5px] border-bronze/15'
-        }`}
+        className="sticky top-0 z-40 transition-all duration-300"
+        style={{
+          backgroundColor: 'var(--bg)',
+          borderBottom: `0.5px solid ${scrolled ? 'rgba(196,154,46,0.3)' : 'rgba(196,154,46,0.15)'}`,
+        }}
       >
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center relative">
           {/* Left nav links — desktop */}
           <nav className="hidden md:flex items-center gap-8 flex-1">
             {navLinks.map(link => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="font-inter text-[11px] tracking-[0.2em] uppercase text-charcoal-muted hover:text-charcoal transition-colors duration-200"
-              >
+              <Link key={link.href} href={link.href} className="nav-link">
                 {link.label}
               </Link>
             ))}
@@ -48,27 +48,40 @@ export default function Navbar() {
           {/* Center logo */}
           <div className="absolute left-1/2 -translate-x-1/2 text-center">
             <Link href="/" className="block">
-              <span className="font-cormorant text-2xl font-light tracking-[0.25em] text-charcoal uppercase">
+              <span
+                className="font-cormorant text-2xl font-light tracking-[0.25em] uppercase"
+                style={{ color: 'var(--text-primary)' }}
+              >
                 Denzos
               </span>
-              <span className="block font-inter text-[8px] tracking-[0.3em] uppercase text-charcoal-muted -mt-0.5">
+              <span
+                className="block font-inter text-[8px] tracking-[0.3em] uppercase -mt-0.5"
+                style={{ color: 'var(--text-secondary)' }}
+              >
                 Maison de Parfum
               </span>
             </Link>
           </div>
 
           {/* Right icons */}
-          <div className="flex items-center gap-5 ml-auto">
+          <div className="flex items-center gap-4 ml-auto">
             <button
               aria-label="Search"
-              className="text-charcoal-muted hover:text-charcoal transition-colors"
+              className="transition-colors hidden md:block"
+              style={{ color: 'var(--text-secondary)' }}
             >
               <Search size={18} />
             </button>
-            <Link href="/account" aria-label="Wishlist" className="relative text-charcoal-muted hover:text-charcoal transition-colors">
+            <Link
+              href="/account"
+              aria-label="Wishlist"
+              className="relative transition-colors hidden md:block"
+              style={{ color: 'var(--text-secondary)' }}
+            >
               <Heart size={18} />
               {wishlist.length > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 bg-bronze text-ivory text-[9px] font-inter font-medium w-4 h-4 rounded-full flex items-center justify-center">
+                <span className="absolute -top-1.5 -right-1.5 bg-bronze text-ivory text-[9px] font-inter font-medium w-4 h-4 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: 'var(--bronze)' }}>
                   {wishlist.length}
                 </span>
               )}
@@ -76,18 +89,24 @@ export default function Navbar() {
             <button
               aria-label="Shopping cart"
               onClick={openDrawer}
-              className="relative text-charcoal-muted hover:text-charcoal transition-colors"
+              className="relative transition-colors"
+              style={{ color: 'var(--text-secondary)' }}
             >
               <ShoppingBag size={18} />
               {totalItems > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 bg-bronze text-ivory text-[9px] font-inter font-medium w-4 h-4 rounded-full flex items-center justify-center">
+                <span
+                  className="absolute -top-1.5 -right-1.5 text-[9px] font-inter font-medium w-4 h-4 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: 'var(--bronze)', color: '#FAF7F0' }}
+                >
                   {totalItems}
                 </span>
               )}
             </button>
+            <ThemeToggle />
             {/* Mobile hamburger */}
             <button
-              className="md:hidden text-charcoal-muted hover:text-charcoal transition-colors"
+              className="md:hidden transition-colors"
+              style={{ color: 'var(--text-secondary)' }}
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
             >
@@ -98,36 +117,71 @@ export default function Navbar() {
       </header>
 
       {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="fixed inset-0 z-50 flex">
-          <div className="absolute inset-0 bg-charcoal/20 backdrop-blur-sm" onClick={() => setMobileOpen(false)} />
-          <div className="relative ml-auto w-72 h-full bg-ivory border-l-[0.5px] border-bronze/30 flex flex-col p-8 animate-slide-in-right">
-            <button
+      <AnimatePresence>
+        {mobileOpen && (
+          <>
+            <motion.div
+              key="backdrop"
+              className="fixed inset-0 z-50"
+              style={{ backgroundColor: 'rgba(0,0,0,0.35)', backdropFilter: 'blur(4px)' }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               onClick={() => setMobileOpen(false)}
-              className="self-end text-charcoal-muted hover:text-charcoal mb-8"
-              aria-label="Close menu"
+            />
+            <motion.div
+              key="drawer"
+              className="fixed top-0 right-0 h-full w-72 z-50 flex flex-col p-8"
+              style={{ backgroundColor: 'var(--bg)', borderLeft: '0.5px solid var(--border)' }}
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             >
-              <X size={20} />
-            </button>
-            <div className="mb-8">
-              <p className="font-cormorant text-3xl font-light text-charcoal">Denzos</p>
-              <p className="font-inter text-[9px] tracking-[0.3em] uppercase text-charcoal-muted">Maison de Parfum</p>
-            </div>
-            <nav className="flex flex-col gap-6">
-              {[...navLinks, { href: '/contact', label: 'Contact' }, { href: '/account', label: 'My Account' }].map(link => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="font-inter text-[11px] tracking-[0.25em] uppercase text-charcoal-muted hover:text-charcoal transition-colors border-b-[0.5px] border-bronze/20 pb-4"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-        </div>
-      )}
+              <button
+                onClick={() => setMobileOpen(false)}
+                className="self-end mb-8 transition-colors"
+                style={{ color: 'var(--text-secondary)' }}
+                aria-label="Close menu"
+              >
+                <X size={20} />
+              </button>
+              <div className="mb-8">
+                <p className="font-cormorant text-3xl font-light" style={{ color: 'var(--text-primary)' }}>Denzos</p>
+                <p className="font-inter text-[9px] tracking-[0.3em] uppercase" style={{ color: 'var(--text-secondary)' }}>Maison de Parfum</p>
+              </div>
+              <nav className="flex flex-col gap-0">
+                {[...navLinks, { href: '/contact', label: 'Contact' }, { href: '/account', label: 'My Account' }].map((link, i) => (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.05 * i + 0.1, duration: 0.3 }}
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="block font-inter text-[11px] tracking-[0.25em] uppercase py-4 transition-colors"
+                      style={{
+                        color: 'var(--text-secondary)',
+                        borderBottom: '0.5px solid var(--border)',
+                      }}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ))}
+              </nav>
+              <div className="mt-auto flex items-center gap-4 pt-6">
+                <ThemeToggle />
+                <span className="font-inter text-[10px] tracking-widest uppercase" style={{ color: 'var(--text-secondary)' }}>
+                  Toggle theme
+                </span>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 }

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Heart, ShoppingBag, ArrowRight } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
+import { motion } from 'framer-motion';
 
 export interface ProductSize {
   ml: number;
@@ -33,30 +34,30 @@ export interface Product {
   theme: {
     accent_hex: string;
     tint_hex: string;
+    glow_hex?: string;
     overlay_mood: string;
     bg_accent: string;
     label_image: string;
   };
 }
 
-export default function ProductCard({ 
-  product, 
+export default function ProductCard({
+  product,
   showSalePrice = false,
-  preferSize 
-}: { 
-  product: Product; 
+  preferSize,
+}: {
+  product: Product;
   showSalePrice?: boolean;
   preferSize?: number;
 }) {
   const [hovered, setHovered] = useState(false);
+  const [wishlistAnimating, setWishlistAnimating] = useState(false);
   const { addItem } = useCart();
   const { toggleWishlist, isWishlisted } = useWishlist();
 
-  // Default to the preferred size (from filter) or 50ml size for card display
-  const displaySize = preferSize 
+  const displaySize = preferSize
     ? (product.sizes.find(s => s.ml === preferSize) ?? product.sizes[0])
     : (product.sizes.find(s => s.ml === 50) ?? product.sizes[0]);
-  const defaultCartSize = displaySize;
 
   const mainImage = displaySize.image ?? product.images[0];
   const hoverImage = product.images.find(img => img !== mainImage) ?? mainImage;
@@ -67,13 +68,22 @@ export default function ProductCard({
       id: product.id,
       slug: product.slug,
       name: product.name,
-      price: defaultCartSize.mrp ?? defaultCartSize.price,
-      salePrice: defaultCartSize.price,
-      size: defaultCartSize.ml,
+      price: displaySize.mrp ?? displaySize.price,
+      salePrice: displaySize.price,
+      size: displaySize.ml,
       quantity: 1,
       image: product.images[0],
     });
   };
+
+  const handleWishlist = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setWishlistAnimating(true);
+    toggleWishlist(product.slug);
+    setTimeout(() => setWishlistAnimating(false), 400);
+  };
+
+  const isWished = isWishlisted(product.slug);
 
   return (
     <div
@@ -83,85 +93,101 @@ export default function ProductCard({
     >
       {/* Image container */}
       <Link href={`/products/${product.slug}`} className="block">
-        <div className="relative aspect-4-5 overflow-hidden bg-bone">
-          <Image
-            src={hovered ? hoverImage : mainImage}
-            alt={product.name}
-            fill
-            className="object-cover transition-all duration-700 group-hover:scale-[1.03]"
-            sizes="(max-width: 768px) 50vw, 25vw"
-          />
+        <div className="relative aspect-4-5 overflow-hidden" style={{ backgroundColor: 'var(--surface-alt)' }}>
+          <motion.div
+            className="absolute inset-0"
+            animate={{ scale: hovered ? 1.04 : 1 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <Image
+              src={hovered ? hoverImage : mainImage}
+              alt={product.name}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 50vw, 25vw"
+            />
+          </motion.div>
 
           {/* Category badge */}
           <div className="absolute top-3 left-3">
-            <span className="font-inter text-[9px] tracking-[0.15em] uppercase bg-ivory/90 text-charcoal-muted px-2 py-1">
+            <span
+              className="font-inter text-[9px] tracking-[0.15em] uppercase px-2 py-1"
+              style={{ backgroundColor: 'var(--bg)', color: 'var(--text-secondary)' }}
+            >
               EDP
             </span>
           </div>
 
           {/* Wishlist button */}
-          <button
-            onClick={(e) => { e.preventDefault(); toggleWishlist(product.slug); }}
-            className={`absolute top-3 right-3 w-8 h-8 flex items-center justify-center bg-ivory/90 transition-all duration-300 ${
-              hovered ? 'opacity-100' : 'opacity-0'
-            }`}
+          <motion.button
+            onClick={handleWishlist}
+            className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center transition-all duration-300"
+            style={{ backgroundColor: 'var(--bg)', opacity: hovered ? 1 : 0 }}
+            animate={wishlistAnimating ? { scale: [1, 1.3, 1] } : { scale: 1 }}
+            transition={{ duration: 0.3 }}
             aria-label="Add to wishlist"
           >
             <Heart
               size={14}
-              className={isWishlisted(product.slug) ? 'fill-bronze text-bronze' : 'text-charcoal-muted'}
+              style={{ color: isWished ? product.theme.accent_hex : 'var(--text-secondary)', fill: isWished ? product.theme.accent_hex : 'none' }}
             />
-          </button>
+          </motion.button>
 
-          {/* Add to cart + View Details hover overlay */}
-          <div
-            className={`absolute bottom-0 left-0 right-0 transition-all duration-300 ${
-              hovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-            }`}
+          {/* Add to cart hover overlay */}
+          <motion.div
+            className="absolute bottom-0 left-0 right-0"
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : 8 }}
+            transition={{ duration: 0.25 }}
           >
             <button
               onClick={handleAddToCart}
-              className="w-full flex items-center justify-center gap-2 bg-charcoal text-ivory py-3.5 font-inter text-[11px] tracking-[0.2em] uppercase hover:bg-bronze transition-colors duration-200"
+              className="w-full flex items-center justify-center gap-2 py-3.5 font-inter text-[11px] tracking-[0.2em] uppercase transition-colors duration-200"
+              style={{ backgroundColor: 'var(--text-primary)', color: 'var(--bg)' }}
             >
               <ShoppingBag size={13} />
               Add to Cart
             </button>
-          </div>
+          </motion.div>
         </div>
       </Link>
 
       {/* Product info */}
       <div className="pt-4 pb-2">
-        {/* Descriptor dots */}
         {product.descriptors && product.descriptors.length > 0 && (
-          <p className="font-inter text-[9px] tracking-[0.2em] uppercase text-charcoal-muted/70 mb-1.5">
+          <p className="font-inter text-[9px] tracking-[0.2em] uppercase mb-1.5" style={{ color: 'var(--text-secondary)', opacity: 0.7 }}>
             {product.descriptors.join(' · ')}
           </p>
         )}
         <Link href={`/products/${product.slug}`}>
-          <h3 className="font-cormorant text-xl font-light text-charcoal hover:text-bronze transition-colors leading-tight">
+          <h3 className="font-cormorant text-xl font-light leading-tight transition-colors" style={{ color: 'var(--text-primary)' }}>
             {product.name}
           </h3>
-          <p className="font-inter text-[11px] text-charcoal-muted mt-0.5 italic leading-snug">{product.tagline}</p>
+          <p className="font-inter text-[11px] mt-0.5 italic leading-snug" style={{ color: 'var(--text-secondary)' }}>{product.tagline}</p>
         </Link>
         <div className="mt-2 flex items-baseline gap-2">
           {showSalePrice && displaySize.mrp ? (
             <>
-              <span className="font-inter text-sm font-medium text-charcoal">
+              <span className="font-inter text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
                 ₹{displaySize.price.toLocaleString('en-IN')}
               </span>
-              <span className="font-inter text-xs text-charcoal-muted line-through">
+              <span className="font-inter text-xs line-through" style={{ color: 'var(--text-secondary)' }}>
                 ₹{displaySize.mrp.toLocaleString('en-IN')}
               </span>
-              <span className="font-inter text-[10px] text-bronze bg-bronze/10 px-1.5 py-0.5">50% off</span>
+              <span
+                className="font-inter text-[10px] px-1.5 py-0.5"
+                style={{ color: product.theme.accent_hex, backgroundColor: `${product.theme.accent_hex}18` }}
+              >
+                50% off
+              </span>
             </>
           ) : (
             <>
-              <span className="font-inter text-sm text-charcoal">
+              <span className="font-inter text-sm" style={{ color: 'var(--text-primary)' }}>
                 ₹{displaySize.price.toLocaleString('en-IN')}
               </span>
               {displaySize.mrp && (
-                <span className="font-inter text-xs text-charcoal-muted line-through">
+                <span className="font-inter text-xs line-through" style={{ color: 'var(--text-secondary)' }}>
                   ₹{displaySize.mrp.toLocaleString('en-IN')}
                 </span>
               )}
@@ -169,14 +195,19 @@ export default function ProductCard({
           )}
         </div>
         {/* View Details link */}
-        <div className={`mt-2 transition-all duration-300 overflow-hidden ${hovered ? 'max-h-8 opacity-100' : 'max-h-0 opacity-0'}`}>
+        <motion.div
+          className="mt-2 overflow-hidden"
+          animate={{ maxHeight: hovered ? 32 : 0, opacity: hovered ? 1 : 0 }}
+          transition={{ duration: 0.25 }}
+        >
           <Link
             href={`/products/${product.slug}`}
-            className="flex items-center gap-1 font-inter text-[10px] tracking-[0.15em] uppercase text-bronze hover:text-charcoal transition-colors"
+            className="flex items-center gap-1 font-inter text-[10px] tracking-[0.15em] uppercase transition-colors"
+            style={{ color: 'var(--bronze)' }}
           >
             View Details <ArrowRight size={10} />
           </Link>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

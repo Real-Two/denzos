@@ -8,6 +8,7 @@ interface NotesPyramidProps {
   notes: Notes;
   accentHex?: string;
   productName?: string;
+  darkMode?: boolean;
 }
 
 function hexToRgba(hex: string, alpha: number): string {
@@ -17,7 +18,11 @@ function hexToRgba(hex: string, alpha: number): string {
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
 
-export default function NotesPyramid({ notes, accentHex = '#C49A2E', productName }: NotesPyramidProps) {
+export default function NotesPyramid({ notes, accentHex = '#C49A2E', productName, darkMode = false }: NotesPyramidProps) {
+  const textPrimary = darkMode ? '#F0EDE6' : 'var(--text-primary)';
+  const textSecondary = darkMode ? `${accentHex}80` : 'var(--text-secondary)';
+  const pillBg = darkMode ? `${accentHex}15` : 'var(--surface)';
+  const pillText = darkMode ? '#F0EDE6' : 'var(--text-primary)';
   const bands = [
     {
       label: 'Top Notes',
@@ -92,11 +97,11 @@ export default function NotesPyramid({ notes, accentHex = '#C49A2E', productName
   return (
     <div className="w-full">
       {productName && (
-        <p className="font-inter text-[10px] tracking-[0.25em] uppercase text-charcoal-muted mb-1">
+        <p className="font-inter text-[10px] tracking-[0.25em] uppercase mb-1" style={{ color: textSecondary }}>
           Fragrance Profile
         </p>
       )}
-      <h3 className="font-cormorant text-3xl font-light text-charcoal mb-10">
+      <h3 className="font-cormorant text-3xl font-light mb-10" style={{ color: textPrimary }}>
         Fragrance Notes
       </h3>
 
@@ -153,15 +158,15 @@ export default function NotesPyramid({ notes, accentHex = '#C49A2E', productName
                 >
                   {band.label}
                 </p>
-                <p className="font-inter text-[9px] text-charcoal-muted/60 mt-0.5">{band.sublabel}</p>
+                <p className="font-inter text-[9px] mt-0.5" style={{ color: textSecondary }}>{band.sublabel}</p>
               </div>
               {/* Note pills */}
               <div className="flex flex-wrap gap-1.5">
                 {band.notes.map(note => (
                   <span
                     key={note}
-                    className="font-inter text-[11px] text-charcoal bg-ivory border-[0.5px] px-3 py-1"
-                    style={{ borderColor: hexToRgba(accentHex, 0.3) }}
+                    className="font-inter text-[11px] px-3 py-1"
+                    style={{ backgroundColor: pillBg, color: pillText, border: `0.5px solid ${hexToRgba(accentHex, 0.3)}` }}
                   >
                     {note}
                   </span>
