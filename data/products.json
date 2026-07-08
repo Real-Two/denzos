@@ -13,9 +13,9 @@
       { "ml": 100, "price": 3499, "mrp": 6999, "image": "/products/amber_royale_100ml.jpeg" }
     ],
     "notes": {
-      "top": ["Saffron", "Cardamom", "Bergamot"],
-      "heart": ["Amber", "Rose Absolute", "Cinnamon"],
-      "base": ["Oud", "Benzoin", "Sandalwood", "Musk"]
+      "top": ["Crushed Saffron", "Blood Orange", "Black Cardamom"],
+      "heart": ["Liquid Amber", "Velvet Rose", "Royal Cinnamon"],
+      "base": ["Cambodian Oud", "Golden Sandalwood", "Warm Vanilla"]
     },
     "scent_story": "Amber Royale opens like a lantern lit in the golden hour — saffron and spice curling through warm stone corridors. At its heart, ancient amber and rose bloom with quiet authority. What lingers is the memory of incense and cedar, long after you've left the room.",
     "mood": "amber",
@@ -48,9 +48,9 @@
       { "ml": 100, "price": 2999, "mrp": 5999, "image": "/products/frosted_air_100ml.jpeg" }
     ],
     "notes": {
-      "top": ["Yuzu", "Mint", "Icy Accord"],
-      "heart": ["White Musk", "Iris", "Violet Leaf"],
-      "base": ["Cedarwood", "Ambergris", "Vetiver"]
+      "top": ["Glacial Mint", "Juniper Berries", "Bergamot Zest"],
+      "heart": ["Silver Iris", "Blue Lotus", "Frozen Rain Accord"],
+      "base": ["Himalayan Cedar", "White Vetiver", "Mineral Ambergris"]
     },
     "scent_story": "Frosted Air is what the Himalayas smell like at 6am — sharp, alive, and impossibly clear. A crystalline opening of yuzu and mint gives way to soft iris, before settling into the quiet warmth of cedar and white musk.",
     "mood": "ice-blue",
@@ -82,9 +82,9 @@
       { "ml": 100, "price": 3199, "mrp": 6399, "image": "/products/noir_floral_100ml.jpeg" }
     ],
     "notes": {
-      "top": ["Black Rose", "Tuberose", "Bergamot"],
-      "heart": ["Jasmine Sambac", "Ylang-Ylang", "Peony"],
-      "base": ["Dark Patchouli", "Benzoin", "Musks", "Cedarwood"]
+      "top": ["Midnight Orchid", "Dark Plum", "Black Truffle"],
+      "heart": ["Black Baccara Rose", "Midnight Jasmine", "Ylang-Ylang"],
+      "base": ["Madagascar Vanilla", "Dark Patchouli", "Cashmere Woods"]
     },
     "scent_story": "Noir Floral begins in shadow and blooms in candlelight. A bouquet that feels familiar yet refuses to be placed — black rose and tuberose with depth borrowed from patchouli and benzoin. Neither sweet nor sharp. Just unforgettable.",
     "mood": "noir-gold",
@@ -116,9 +116,9 @@
       { "ml": 100, "price": 3999, "mrp": 7999, "image": "/products/oud_signature_100ml.jpeg" }
     ],
     "notes": {
-      "top": ["Oud", "Smoky Accord", "Frankincense"],
-      "heart": ["Rose Taif", "Amber", "Leather"],
-      "base": ["Agarwood", "Sandalwood", "Dark Musk", "Labdanum"]
+      "top": ["Incense Smoke", "Saffron Stigmas", "Black Pepper"],
+      "heart": ["Taif Rose", "Aged Leather", "Resinous Myrrh"],
+      "base": ["Assam Agarwood (Oud)", "Dark Sandalwood", "Labdanum"]
     },
     "scent_story": "Oud Signature is not a fragrance that announces itself — it arrives. A deep, ceremonial opening of raw oud and frankincense, tempered by the softness of rose and amber. On the skin, it becomes something entirely personal: ancient, meditative, and yours.",
     "mood": "deep-brown",
@@ -150,9 +150,9 @@
       { "ml": 100, "price": 3199, "mrp": 6399, "image": "/products/woody_intense_100ml.jpeg" }
     ],
     "notes": {
-      "top": ["Pine Needle", "Cypress", "Black Pepper"],
-      "heart": ["Cedarwood", "Vetiver", "Guaiac Wood"],
-      "base": ["Oakmoss", "Patchouli", "Musk", "Ambergris"]
+      "top": ["Wild Cypress", "Crushed Pine Needles", "Bitter Grapefruit"],
+      "heart": ["Smoked Vetiver", "Atlas Cedar", "Nutmeg"],
+      "base": ["Rich Oakmoss", "Earthy Patchouli", "Amber Woods"]
     },
     "scent_story": "Woody Intense is a walk through pine forests at dusk — not a romanticised version, the real thing. Sharp conifer and black pepper give way to deep cedar and vetiver, finishing on a base that feels like soil, moss, and open mountain air.",
     "mood": "forest-dark",

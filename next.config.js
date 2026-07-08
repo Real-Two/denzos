@@ -3,6 +3,9 @@ const nextConfig = {
   images: {
     remotePatterns: [],
   },
+  experimental: {
+    scrollRestoration: true,
+  },
   // Ensures JSON can be imported
   webpack: (config) => {
     config.resolve.extensionAlias = {

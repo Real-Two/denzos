@@ -6,6 +6,7 @@ import { useWishlist } from '@/context/WishlistContext';
 import { Heart, ShoppingBag, Star, ChevronLeft } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import NotesPyramid from '@/components/product/NotesPyramid';
 import products from '@/data/products.json';
 import { motion } from 'framer-motion';
@@ -120,6 +121,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
   const [wishlistAnimating, setWishlistAnimating] = useState(false);
   const { addItem } = useCart();
   const { toggleWishlist, isWishlisted } = useWishlist();
+  const router = useRouter();
 
   const accentHex = product.theme.accent_hex;
   const tintHex = product.theme.tint_hex;
@@ -198,14 +200,14 @@ export default function ProductDetailClient({ product }: { product: Product }) {
         <div className="max-w-7xl mx-auto px-6 py-10">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 mb-10">
-            <Link
-              href="/shop"
+            <button
+              onClick={() => router.back()}
               className="flex items-center gap-1 font-inter text-[11px] transition-colors"
               style={{ color: `${accentHex}99` }}
             >
               <ChevronLeft size={12} />
               Back to Collection
-            </Link>
+            </button>
             <span style={{ color: `${accentHex}40` }}>/</span>
             <span className="font-inter text-[11px]" style={{ color: `${accentHex}CC` }}>{product.name}</span>
           </div>
