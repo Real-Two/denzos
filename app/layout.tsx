@@ -8,6 +8,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CartDrawer from "@/components/cart/CartDrawer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import ThemeScript from "@/components/ui/ThemeScript";
 
 export const metadata: Metadata = {
   title: {
@@ -31,6 +32,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <ThemeScript />
+      </head>
       <body suppressHydrationWarning>
         <ThemeProvider>
           <CartProvider>

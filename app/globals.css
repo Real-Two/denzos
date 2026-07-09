@@ -8,6 +8,7 @@
 :root[data-theme="light"],
 :root {
   --bg:             #FAF7F0;
+  --bg-rgb:         250, 247, 240;
   --surface:        #FFFFFF;
   --surface-alt:    #F0EDE5;
   --text-primary:   #242017;
@@ -19,6 +20,7 @@
 
 :root[data-theme="dark"] {
   --bg:             #2A2A1F;
+  --bg-rgb:         42, 42, 31;
   --surface:        #33321F;
   --surface-alt:    #3D3B28;
   --text-primary:   #F0EDE6;

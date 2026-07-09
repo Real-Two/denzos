@@ -18,7 +18,7 @@ export default function Hero() {
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to right, var(--bg) 0%, color-mix(in srgb, var(--bg) 85%, transparent) 55%, color-mix(in srgb, var(--bg) 15%, transparent) 100%)',
+            background: 'linear-gradient(to right, var(--bg) 0%, rgba(var(--bg-rgb), 0.85) 55%, rgba(var(--bg-rgb), 0.15) 100%)',
           }}
         />
       </div>
@@ -50,7 +50,7 @@ export default function Hero() {
             className="mt-8 inline-flex items-center gap-3 px-5 py-3"
             style={{
               border: '0.5px solid rgba(196,154,46,0.4)',
-              backgroundColor: 'color-mix(in srgb, var(--bg) 80%, transparent)',
+              backgroundColor: 'rgba(var(--bg-rgb), 0.8)',
             }}
           >
             <div className="w-[2px] h-8" style={{ backgroundColor: 'var(--bronze)' }} />
