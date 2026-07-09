@@ -31,7 +31,7 @@ export default function InstagramFeed() {
           className="inline-flex items-center gap-2 group"
         >
           <InstagramIcon size={18} />
-          <span className="font-inter text-[11px] tracking-[0.25em] uppercase text-charcoal-muted group-hover:text-bronze transition-colors">
+          <span className="font-inter text-[11px] tracking-[0.25em] uppercase text-theme-secondary group-hover:text-bronze transition-colors">
             @denzosparfum
           </span>
         </a>
@@ -61,7 +61,7 @@ export default function InstagramFeed() {
           </a>
         ))}
       </div>
-      <p className="text-center mt-4 font-inter text-[11px] text-charcoal-muted/60">
+      <p className="text-center mt-4 font-inter text-[11px] text-theme-secondary/60">
         Live Instagram feed powered by{' '}
         <a href="https://behold.so" target="_blank" rel="noopener noreferrer" className="underline hover:text-bronze transition-colors">
           Behold.so

@@ -55,13 +55,13 @@ export default function FAQPage() {
       {/* Header */}
       <div className="text-center mb-14">
         <p className="section-subheading mb-3">Help & Information</p>
-        <h1 className="font-cormorant text-6xl font-light text-charcoal mb-4">
+        <h1 className="font-cormorant text-6xl font-light text-theme-primary mb-4">
           Frequently Asked Questions
         </h1>
         <div className="w-12 h-[0.5px] bg-bronze mx-auto mb-5" />
-        <p className="font-inter text-sm text-charcoal-muted">
+        <p className="font-inter text-sm text-theme-secondary">
           Can&apos;t find what you&apos;re looking for?{' '}
-          <a href="/contact" className="text-bronze hover:text-charcoal transition-colors">
+          <a href="/contact" className="text-bronze hover:text-theme-primary transition-colors">
             Contact us directly
           </a>
           {' '}— we&apos;re happy to help.

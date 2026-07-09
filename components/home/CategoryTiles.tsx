@@ -37,7 +37,7 @@ export default function CategoryTiles() {
         {categories.map(cat => (
           <Link key={cat.href} href={cat.href} className="group relative overflow-hidden block">
             {/* Image */}
-            <div className="relative h-80 md:h-96 overflow-hidden bg-bone">
+            <div className="relative h-80 md:h-96 overflow-hidden bg-surface-alt">
               <Image
                 src={cat.image}
                 alt={cat.label}
@@ -56,7 +56,7 @@ export default function CategoryTiles() {
                   {cat.description}
                 </p>
                 <div className="mt-3 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-y-1 group-hover:translate-y-0">
-                  <span className="font-inter text-[11px] tracking-[0.2em] uppercase text-ivory border-b-[0.5px] border-ivory/60">
+                  <span className="font-inter text-[11px] tracking-[0.2em] uppercase text-ivory border-b-[0.5px] border-theme/60">
                     Shop Now
                   </span>
                   <span className="text-ivory/60">→</span>

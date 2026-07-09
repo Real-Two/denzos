@@ -41,7 +41,7 @@ export default function ReviewsCarousel() {
   };
 
   return (
-    <section className="bg-bone border-y-[0.5px] border-bronze/20 py-20 overflow-hidden">
+    <section className="bg-surface-alt border-y-[0.5px] border-bronze/20 py-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-10">
@@ -81,19 +81,19 @@ export default function ReviewsCarousel() {
             {reviews.map((review, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-full md:w-[calc(33.333%-12px)] bg-ivory border-[0.5px] border-bronze/20 p-7"
+                className="flex-shrink-0 w-full md:w-[calc(33.333%-12px)] bg-theme border-[0.5px] border-bronze/20 p-7"
               >
                 <StarRating rating={review.rating} />
-                <blockquote className="font-cormorant text-xl font-light text-charcoal leading-relaxed mt-4 mb-5">
+                <blockquote className="font-cormorant text-xl font-light text-theme-primary leading-relaxed mt-4 mb-5">
                   &ldquo;{review.body}&rdquo;
                 </blockquote>
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-inter text-xs font-medium text-charcoal">{review.author}</p>
-                    <p className="font-inter text-[11px] text-charcoal-muted">{review.location}</p>
+                    <p className="font-inter text-xs font-medium text-theme-primary">{review.author}</p>
+                    <p className="font-inter text-[11px] text-theme-secondary">{review.location}</p>
                   </div>
                   <div className="text-right">
-                    <p className="font-inter text-[10px] text-charcoal-muted">{review.handle}</p>
+                    <p className="font-inter text-[10px] text-theme-secondary">{review.handle}</p>
                     <p className="font-inter text-[10px] text-bronze mt-0.5">{review.product}</p>
                   </div>
                 </div>

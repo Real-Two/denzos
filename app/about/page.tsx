@@ -13,7 +13,7 @@ export default function AboutPage() {
       {/* Header */}
       <div className="text-center mb-16 max-w-2xl mx-auto">
         <p className="section-subheading mb-3">Who We Are</p>
-        <h1 className="font-cormorant text-6xl md:text-7xl font-light text-charcoal leading-tight mb-6">
+        <h1 className="font-cormorant text-6xl md:text-7xl font-light text-theme-primary leading-tight mb-6">
           Our Story
         </h1>
         <div className="w-12 h-[0.5px] bg-bronze mx-auto" />
@@ -33,19 +33,19 @@ export default function AboutPage() {
         </div>
 
         <div>
-          <p className="font-inter text-[10px] tracking-[0.3em] uppercase text-charcoal-muted mb-4">The Beginning</p>
-          <h2 className="font-cormorant text-4xl font-light text-charcoal mb-6 leading-tight">
+          <p className="font-inter text-[10px] tracking-[0.3em] uppercase text-theme-secondary mb-4">The Beginning</p>
+          <h2 className="font-cormorant text-4xl font-light text-theme-primary mb-6 leading-tight">
             Born from a love of<br />
             <em className="not-italic text-bronze">India&apos;s aromatic soul.</em>
           </h2>
           <div className="space-y-4">
-            <p className="font-inter text-sm text-charcoal-muted leading-relaxed">
+            <p className="font-inter text-sm text-theme-secondary leading-relaxed">
               Denzos was founded on a singular belief: that India has one of the world&apos;s richest aromatic heritages, yet no perfume house had truly brought it to the global stage with the craft and elegance it deserved.
             </p>
-            <p className="font-inter text-sm text-charcoal-muted leading-relaxed">
+            <p className="font-inter text-sm text-theme-secondary leading-relaxed">
               We began in a small atelier in Delhi, with a simple mission: to create fragrances that felt uncompromisingly Indian in character — bold, layered, and rooted in the subcontinent&apos;s centuries-long love affair with scent.
             </p>
-            <p className="font-inter text-sm text-charcoal-muted leading-relaxed">
+            <p className="font-inter text-sm text-theme-secondary leading-relaxed">
               What emerged was not just a collection of fragrances, but a manifesto: that the finest perfumery in the world can — and does — come from India.
             </p>
           </div>
@@ -80,19 +80,19 @@ export default function AboutPage() {
         ].map(value => (
           <div key={value.number} className="border-[0.5px] border-bronze/25 p-8">
             <p className="font-cormorant text-5xl font-light text-bronze/30 mb-4">{value.number}</p>
-            <h3 className="font-cormorant text-2xl font-light text-charcoal mb-3">{value.title}</h3>
+            <h3 className="font-cormorant text-2xl font-light text-theme-primary mb-3">{value.title}</h3>
             <div className="w-8 h-[0.5px] bg-bronze mb-4" />
-            <p className="font-inter text-sm text-charcoal-muted leading-relaxed">{value.body}</p>
+            <p className="font-inter text-sm text-theme-secondary leading-relaxed">{value.body}</p>
           </div>
         ))}
       </div>
 
       {/* Call to action */}
-      <div className="text-center bg-bone border-[0.5px] border-bronze/20 p-12">
-        <h2 className="font-cormorant text-4xl font-light text-charcoal mb-4">
+      <div className="text-center bg-surface-alt border-[0.5px] border-bronze/20 p-12">
+        <h2 className="font-cormorant text-4xl font-light text-theme-primary mb-4">
           Ready to find your signature scent?
         </h2>
-        <p className="font-inter text-sm text-charcoal-muted mb-8">
+        <p className="font-inter text-sm text-theme-secondary mb-8">
           Start with our Discovery Set — five signature scents to explore before you commit.
         </p>
         <div className="flex flex-wrap justify-center gap-4">

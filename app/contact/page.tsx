@@ -12,7 +12,7 @@ export default function ContactPage() {
       {/* Header */}
       <div className="text-center mb-14">
         <p className="section-subheading mb-3">We&apos;re Here</p>
-        <h1 className="font-cormorant text-6xl font-light text-charcoal mb-4">
+        <h1 className="font-cormorant text-6xl font-light text-theme-primary mb-4">
           Get in Touch
         </h1>
         <div className="w-12 h-[0.5px] bg-bronze mx-auto" />
@@ -21,10 +21,10 @@ export default function ContactPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
         {/* Contact info */}
         <div>
-          <h2 className="font-cormorant text-3xl font-light text-charcoal mb-6">
+          <h2 className="font-cormorant text-3xl font-light text-theme-primary mb-6">
             Reach us directly
           </h2>
-          <p className="font-inter text-sm text-charcoal-muted leading-relaxed mb-8">
+          <p className="font-inter text-sm text-theme-secondary leading-relaxed mb-8">
             We&apos;re a small, dedicated team and we personally read every message. Whether you have a question about a fragrance, need help with an order, or just want to talk scent — we&apos;d love to hear from you.
           </p>
 
@@ -34,8 +34,8 @@ export default function ContactPage() {
                 <MessageCircle size={16} className="text-bronze" />
               </div>
               <div>
-                <p className="font-inter text-xs font-medium text-charcoal">WhatsApp</p>
-                <p className="font-inter text-sm text-charcoal-muted">+91 XXXXXXXXXX</p>
+                <p className="font-inter text-xs font-medium text-theme-primary">WhatsApp</p>
+                <p className="font-inter text-sm text-theme-secondary">+91 XXXXXXXXXX</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -43,8 +43,8 @@ export default function ContactPage() {
                 <Mail size={16} className="text-bronze" />
               </div>
               <div>
-                <p className="font-inter text-xs font-medium text-charcoal">Email</p>
-                <a href="mailto:hello@denzos.in" className="font-inter text-sm text-charcoal-muted hover:text-bronze transition-colors">hello@denzos.in</a>
+                <p className="font-inter text-xs font-medium text-theme-primary">Email</p>
+                <a href="mailto:hello@denzos.in" className="font-inter text-sm text-theme-secondary hover:text-bronze transition-colors">hello@denzos.in</a>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -52,8 +52,8 @@ export default function ContactPage() {
                 <Clock size={16} className="text-bronze" />
               </div>
               <div>
-                <p className="font-inter text-xs font-medium text-charcoal">Response Time</p>
-                <p className="font-inter text-sm text-charcoal-muted">Within 24 hours, Mon–Sat</p>
+                <p className="font-inter text-xs font-medium text-theme-primary">Response Time</p>
+                <p className="font-inter text-sm text-theme-secondary">Within 24 hours, Mon–Sat</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -61,8 +61,8 @@ export default function ContactPage() {
                 <MapPin size={16} className="text-bronze" />
               </div>
               <div>
-                <p className="font-inter text-xs font-medium text-charcoal">Based In</p>
-                <p className="font-inter text-sm text-charcoal-muted">New Delhi, Delhi, India</p>
+                <p className="font-inter text-xs font-medium text-theme-primary">Based In</p>
+                <p className="font-inter text-sm text-theme-secondary">New Delhi, Delhi, India</p>
               </div>
             </div>
           </div>
@@ -81,55 +81,55 @@ export default function ContactPage() {
 
         {/* Contact form */}
         <div>
-          <h2 className="font-cormorant text-3xl font-light text-charcoal mb-6">
+          <h2 className="font-cormorant text-3xl font-light text-theme-primary mb-6">
             Send us a message
           </h2>
           <form className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label htmlFor="first-name" className="font-inter text-[11px] tracking-[0.15em] uppercase text-charcoal-muted block mb-1.5">
+                <label htmlFor="first-name" className="font-inter text-[11px] tracking-[0.15em] uppercase text-theme-secondary block mb-1.5">
                   First Name
                 </label>
                 <input
                   id="first-name"
                   type="text"
                   required
-                  className="w-full bg-ivory border-[0.5px] border-bronze/40 px-4 py-3 font-inter text-sm text-charcoal placeholder:text-charcoal-muted/50 focus:outline-none focus:border-bronze transition-colors"
+                  className="w-full bg-theme border-[0.5px] border-bronze/40 px-4 py-3 font-inter text-sm text-theme-primary placeholder:text-theme-secondary/50 focus:outline-none focus:border-bronze transition-colors"
                   placeholder="Priya"
                 />
               </div>
               <div>
-                <label htmlFor="last-name" className="font-inter text-[11px] tracking-[0.15em] uppercase text-charcoal-muted block mb-1.5">
+                <label htmlFor="last-name" className="font-inter text-[11px] tracking-[0.15em] uppercase text-theme-secondary block mb-1.5">
                   Last Name
                 </label>
                 <input
                   id="last-name"
                   type="text"
                   required
-                  className="w-full bg-ivory border-[0.5px] border-bronze/40 px-4 py-3 font-inter text-sm text-charcoal placeholder:text-charcoal-muted/50 focus:outline-none focus:border-bronze transition-colors"
+                  className="w-full bg-theme border-[0.5px] border-bronze/40 px-4 py-3 font-inter text-sm text-theme-primary placeholder:text-theme-secondary/50 focus:outline-none focus:border-bronze transition-colors"
                   placeholder="Sharma"
                 />
               </div>
             </div>
             <div>
-              <label htmlFor="email" className="font-inter text-[11px] tracking-[0.15em] uppercase text-charcoal-muted block mb-1.5">
+              <label htmlFor="email" className="font-inter text-[11px] tracking-[0.15em] uppercase text-theme-secondary block mb-1.5">
                 Email
               </label>
               <input
                 id="email"
                 type="email"
                 required
-                className="w-full bg-ivory border-[0.5px] border-bronze/40 px-4 py-3 font-inter text-sm text-charcoal placeholder:text-charcoal-muted/50 focus:outline-none focus:border-bronze transition-colors"
+                className="w-full bg-theme border-[0.5px] border-bronze/40 px-4 py-3 font-inter text-sm text-theme-primary placeholder:text-theme-secondary/50 focus:outline-none focus:border-bronze transition-colors"
                 placeholder="priya@email.com"
               />
             </div>
             <div>
-              <label htmlFor="subject" className="font-inter text-[11px] tracking-[0.15em] uppercase text-charcoal-muted block mb-1.5">
+              <label htmlFor="subject" className="font-inter text-[11px] tracking-[0.15em] uppercase text-theme-secondary block mb-1.5">
                 Subject
               </label>
               <select
                 id="subject"
-                className="w-full bg-ivory border-[0.5px] border-bronze/40 px-4 py-3 font-inter text-sm text-charcoal focus:outline-none focus:border-bronze transition-colors"
+                className="w-full bg-theme border-[0.5px] border-bronze/40 px-4 py-3 font-inter text-sm text-theme-primary focus:outline-none focus:border-bronze transition-colors"
               >
                 <option>Fragrance Recommendation</option>
                 <option>Order Query</option>
@@ -139,14 +139,14 @@ export default function ContactPage() {
               </select>
             </div>
             <div>
-              <label htmlFor="message" className="font-inter text-[11px] tracking-[0.15em] uppercase text-charcoal-muted block mb-1.5">
+              <label htmlFor="message" className="font-inter text-[11px] tracking-[0.15em] uppercase text-theme-secondary block mb-1.5">
                 Message
               </label>
               <textarea
                 id="message"
                 rows={5}
                 required
-                className="w-full bg-ivory border-[0.5px] border-bronze/40 px-4 py-3 font-inter text-sm text-charcoal placeholder:text-charcoal-muted/50 focus:outline-none focus:border-bronze transition-colors resize-none"
+                className="w-full bg-theme border-[0.5px] border-bronze/40 px-4 py-3 font-inter text-sm text-theme-primary placeholder:text-theme-secondary/50 focus:outline-none focus:border-bronze transition-colors resize-none"
                 placeholder="Tell us how we can help..."
               />
             </div>

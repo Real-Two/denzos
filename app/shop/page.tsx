@@ -61,11 +61,11 @@ function ShopContent() {
       {/* Page header */}
       <div className="text-center mb-12">
         <p className="section-subheading mb-2">Denzos — Maison de Parfum</p>
-        <h1 className="font-cormorant text-5xl md:text-6xl font-light text-charcoal mb-4">
+        <h1 className="font-cormorant text-5xl md:text-6xl font-light text-theme-primary mb-4">
           The Collection
         </h1>
         <div className="w-12 h-[0.5px] bg-bronze mx-auto mb-4" />
-        <p className="font-inter text-sm text-charcoal-muted max-w-md mx-auto">
+        <p className="font-inter text-sm text-theme-secondary max-w-md mx-auto">
           Five Eau de Parfum compositions. Each one a statement. Every 10ml tester carries full EDP concentration.
         </p>
       </div>
@@ -79,7 +79,7 @@ function ShopContent() {
             className={`font-inter text-[11px] tracking-[0.2em] uppercase px-5 py-2.5 border-[0.5px] transition-all duration-200 ${
               activeFilter === tab.value
                 ? 'bg-bronze text-ivory border-bronze'
-                : 'bg-ivory text-charcoal-muted border-bronze/40 hover:border-bronze hover:text-charcoal'
+                : 'bg-theme text-theme-secondary border-bronze/40 hover:border-bronze hover:text-theme-primary'
             }`}
           >
             {tab.label}
@@ -89,11 +89,11 @@ function ShopContent() {
 
       {/* Tester upsell banner */}
       {activeFilter === 'testers' && (
-        <div className="bg-bone border-[0.5px] border-bronze/30 p-5 mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="bg-surface-alt border-[0.5px] border-bronze/30 p-5 mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
-            <p className="font-inter text-[10px] tracking-[0.2em] uppercase text-charcoal-muted mb-1">Discovery Testers</p>
-            <p className="font-cormorant text-xl font-light text-charcoal">Find your signature before you commit.</p>
-            <p className="font-inter text-sm text-charcoal-muted mt-1">
+            <p className="font-inter text-[10px] tracking-[0.2em] uppercase text-theme-secondary mb-1">Discovery Testers</p>
+            <p className="font-cormorant text-xl font-light text-theme-primary">Find your signature before you commit.</p>
+            <p className="font-inter text-sm text-theme-secondary mt-1">
               Each 10ml is full-concentration EDP — not a diluted sample. Try all five before you decide.
             </p>
           </div>
@@ -104,7 +104,7 @@ function ShopContent() {
       )}
 
       {/* Product count */}
-      <p className="font-inter text-xs text-charcoal-muted mb-6 text-center">
+      <p className="font-inter text-xs text-theme-secondary mb-6 text-center">
         Showing {filtered.length} {filtered.length === 1 ? 'fragrance' : 'fragrances'}
       </p>
 
@@ -131,7 +131,7 @@ function ShopContent() {
 
       {filtered.length === 0 && (
         <div className="text-center py-20">
-          <p className="font-cormorant text-3xl font-light text-charcoal-muted">No fragrances found</p>
+          <p className="font-cormorant text-3xl font-light text-theme-secondary">No fragrances found</p>
         </div>
       )}
     </div>

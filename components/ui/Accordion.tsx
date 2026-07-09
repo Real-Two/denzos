@@ -21,7 +21,7 @@ export default function Accordion({ items }: { items: AccordionItem[] }) {
             className="w-full flex items-start justify-between py-6 text-left gap-6 group"
             aria-expanded={openIndex === index}
           >
-            <span className="font-cormorant text-xl font-light text-charcoal group-hover:text-bronze transition-colors leading-snug">
+            <span className="font-cormorant text-xl font-light text-theme-primary group-hover:text-bronze transition-colors leading-snug">
               {item.question}
             </span>
             <span className="flex-shrink-0 mt-1 text-bronze transition-transform duration-200">
@@ -33,7 +33,7 @@ export default function Accordion({ items }: { items: AccordionItem[] }) {
               openIndex === index ? 'max-h-96 pb-6' : 'max-h-0'
             }`}
           >
-            <p className="font-inter text-sm text-charcoal-muted leading-relaxed pr-10">
+            <p className="font-inter text-sm text-theme-secondary leading-relaxed pr-10">
               {item.answer}
             </p>
           </div>
