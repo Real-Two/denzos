@@ -26,14 +26,14 @@ export default function NotesPyramid({ notes, accentHex = '#C49A2E', productName
   const bands = [
     {
       label: 'First spray',
-      sublabel: 'Base notes',
+      sublabel: 'Opening notes',
       notes: notes.top,
       fillOpacity: 0.22,
       strokeOpacity: 0.5,
     },
     {
       label: 'As it settles',
-      sublabel: 'Base notes',
+      sublabel: 'Heart notes',
       notes: notes.heart,
       fillOpacity: 0.5,
       strokeOpacity: 0.7,
