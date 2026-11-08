@@ -1,0 +1,28 @@
+
+.offer-ribbon {position:relative;text-align:center;background:#44232b;color:#fff3de;padding:10px 40px;font:500 11px/1.5 var(--font-inter);letter-spacing:.055em}
+.offer-ribbon span {color:#ebbf80;margin:0 9px}
+.editor-kicker,.shelf-family,.shelf-volume {font:600 10px/1.6 var(--font-inter);letter-spacing:.17em;text-transform:uppercase}
+.collection-cover,.footer-edition {background:#352529 url('/images/hero/material-study.jpg') center/cover;color:#fff6e7;position:relative;isolation:isolate}
+.collection-cover:before,.footer-edition:before {content:'';position:absolute;inset:0;background:linear-gradient(90deg,#211419cd,transparent);z-index:-1}
+.collection-cover {padding:clamp(36px,6vw,78px);margin-bottom:30px}
+.collection-cover h1,.finder h1,.footer-edition h2,.story-mast h1 {font:normal clamp(54px,6vw,100px)/.97 Georgia,serif;letter-spacing:-.065em;margin:19px 0 25px}
+.collection-cover em,.footer-edition em {color:#f3d6af}
+.collection-cover a,.footer-edition a,.finder-result a {display:inline-block;border-bottom:1px solid;padding:5px 0;font-size:13px}
+.filter-rail {scroll-margin-top:100px}.filter-rail button,.note-options button {border-radius:30px}
+.shelf-image {position:relative}.shelf-card h3,.finder-result h2 {font:normal clamp(22px,2.4vw,38px)/1.14 Georgia,serif;letter-spacing:-.045em}
+.shelf-image>a {display:block}.bottle-study {aspect-ratio:4/4.6;position:relative;isolation:isolate;overflow:hidden;display:grid;place-items:center;background:radial-gradient(ellipse at 25% 0%,color-mix(in srgb,var(--light),#dfd2ab 32%),var(--ink) 86%)}
+.study-halo {position:absolute;inset:-30%;background:repeating-radial-gradient(ellipse at 95% 95%,transparent 0 31px,#fff1 33px,transparent 47px);transform:rotate(-15deg)}
+.study-bottle {position:relative;width:40%;filter:drop-shadow(12px 16px 8px #10090560);transform:rotate(-5deg);transition:transform .65s cubic-bezier(.2,.7,.3,1)}
+.shelf-card:hover .study-bottle,.shelf-card:focus-within .study-bottle {transform:translateY(-3%) rotate(0)}
+.study-cap {width:57%;aspect-ratio:2.15;margin:auto;background:repeating-linear-gradient(90deg,#28231f 0 2px,#736552 3px,#393029 5px);border-radius:4px}
+.study-glass {position:relative;aspect-ratio:.76;border-radius:11% 11% 7% 7%;border:1px solid #e3d2a7ad;background:linear-gradient(101deg,#fff7,#8b78635c 9%,#3e30226e 76%,#eddaaa8c);box-shadow:inset 3px 0 6px #fffa,inset -3px -6px 5px #28231e88}
+.study-glass img {object-fit:fill;padding:13% 9%}.bottle-study-large {height:100%;width:100%;aspect-ratio:auto}
+.shelf-heart,.shelf-buy button {display:grid;place-items:center;width:38px;height:38px;border-radius:50%}.shelf-heart {position:absolute;right:10px;top:10px;background:#f5efe3;color:#382d28}.shelf-volume {position:absolute;bottom:10px;left:10px;color:white;background:#231a18b8;padding:3px 9px}
+.shelf-family {margin:15px 0 5px;color:var(--text-secondary);letter-spacing:.09em}.shelf-buy {display:flex;justify-content:space-between;align-items:center;gap:4px;margin:9px 0 18px;font-size:14px}.shelf-buy del {font-size:11px;opacity:.64}.shelf-buy button {border:1px solid var(--border);flex-shrink:0}
+.finder {display:grid;grid-template-columns:1fr 1fr;background:#efe8d9;color:#312d27}.finder-copy {padding:clamp(28px,6vw,95px);align-self:center}.finder h1 em {color:#805b48}.note-options {display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.note-options button {font-size:12px;padding:10px 14px;border:1px solid #968c7e}.note-options button[aria-pressed=true]{background:#40362e;color:white}
+.finder-result {position:relative;isolation:isolate;color:#fff9ef;animation:edition-in .5s ease-out}.finder-result .bottle-study {height:100%;min-height:400px;aspect-ratio:auto}.finder-result .study-bottle {width:26%;margin-bottom:65px}.finder-result>div:last-child {position:absolute;bottom:0;left:0;right:0;padding:18px 7%;background:linear-gradient(transparent,#17110bdd)}.finder-result p {font-size:13px;margin-top:4px}
+.footer-edition {background-position:center 58%;padding:48px max(6%,calc((100vw - 1150px)/2))}.footer-edition h2 {font-size:clamp(34px,4vw,58px)}
+.story-mast {padding:40px 5%;border-block:1px solid var(--border)}.bag-summary {position:sticky;top:90px;border-top:3px solid #ac8453!important}.delivery-meter {height:4px;background:var(--border);margin:12px 0}.delivery-meter i {display:block;height:100%;background:var(--bronze);transition:width .35s}
+@keyframes edition-in {from{opacity:.75;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media(max-width:700px){.finder{grid-template-columns:1fr}.finder-result .bottle-study{min-height:310px}.finder-result .study-bottle{width:98px}.shelf-family{font-size:9px}.filter-rail{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding-bottom:7px}.filter-rail button{flex:none}.collection-cover{background-position:64% center}.shelf-buy{font-size:12px}.shelf-buy del{display:block}.bag-summary{position:static}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}

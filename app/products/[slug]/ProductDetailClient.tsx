@@ -1,5 +1,6 @@
 'use client';
 
+import BottleStudy from '@/components/product/BottleStudy';
 import { useState, useEffect } from 'react';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
@@ -201,7 +202,7 @@ export default function ProductDetailClient({ product, preferredSize }: { produc
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 mb-10">
             <button
-              onClick={() => router.back()}
+              onClick={() => router.push('/shop')}
               className="flex items-center gap-1 font-inter text-[11px] transition-colors"
               style={{ color: `${accentHex}99` }}
             >
@@ -220,14 +221,7 @@ export default function ProductDetailClient({ product, preferredSize }: { produc
                 className="relative aspect-4-5 overflow-hidden mb-3"
                 style={{ backgroundColor: `${accentHex}0D` }}
               >
-                <Image
-                  src={selectedImage}
-                  alt={product.name}
-                  fill
-                  className="object-cover transition-all duration-500"
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
+                <BottleStudy name={product.name} image={selectedImage} accent={accentHex} tint={tintHex} large />
                 {/* Category badge */}
                 <div className="absolute top-4 left-4 z-20">
                   <span

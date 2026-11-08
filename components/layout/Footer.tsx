@@ -1,41 +1,12 @@
 import Link from 'next/link';
-import { MessageCircle } from 'lucide-react';
+
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer style={{ backgroundColor: 'var(--bg)', borderTop: '0.5px solid var(--border)' }} className="mt-24">
-      {/* Newsletter strip */}
-      <div style={{ backgroundColor: 'var(--surface-alt)', borderBottom: '0.5px solid var(--border)' }} className="py-10">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <p className="font-cormorant text-2xl font-light" style={{ color: 'var(--text-primary)' }}>Stay in the world of Denzos</p>
-            <p className="font-inter text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>New releases, exclusive offers, and the art of Indian perfumery.</p>
-          </div>
-          <form className="flex gap-0 w-full max-w-sm">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="flex-1 border-r-0 px-4 py-3 text-sm font-inter focus:outline-none transition-colors"
-              style={{
-                backgroundColor: 'var(--surface)',
-                border: '0.5px solid var(--border)',
-                color: 'var(--text-primary)',
-              }}
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 text-[11px] font-inter tracking-[0.2em] uppercase font-medium transition-colors whitespace-nowrap"
-              style={{ backgroundColor: 'var(--bronze)', color: '#FAF7F0' }}
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
-      </div>
-
-      {/* Main footer grid */}
+      <div className="footer-edition"><div><p className="editor-kicker">The discovery collection</p><h2>A little bottle.<br/><em>A lasting impression.</em></h2><Link href="/testers">Find your 10 ml ↗</Link></div></div>
       <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-2 md:grid-cols-4 gap-10">
         {/* Brand */}
         <div className="col-span-2 md:col-span-1">
@@ -51,10 +22,7 @@ export default function Footer() {
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
               </svg>
             </a>
-            <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
-              className="transition-colors" style={{ color: 'var(--text-secondary)' }}>
-              <MessageCircle size={16} />
-            </a>
+            
           </div>
         </div>
 

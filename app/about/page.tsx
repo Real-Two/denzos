@@ -11,8 +11,8 @@ export default function AboutPage() {
   return (
     <div className="max-w-7xl mx-auto px-6 py-16">
       {/* Header */}
-      <div className="text-center mb-16 max-w-2xl mx-auto">
-        <p className="section-subheading mb-3">Who We Are</p>
+      <div className="story-mast mb-12">
+        <p className="section-subheading mb-3">Denzos · Maison de Parfum</p>
         <h1 className="font-cormorant text-6xl md:text-7xl font-light text-theme-primary leading-tight mb-6">
           Our Story
         </h1>

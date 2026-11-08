@@ -23,7 +23,7 @@ export default function CartPage() {
       <div className="mb-10">
         <p className="section-subheading mb-2">Review Your Selection</p>
         <h1 className="font-cormorant text-5xl font-light text-theme-primary">
-          Your Cart
+          Your fragrance bag
           {totalItems > 0 && (
             <span className="font-inter text-lg text-theme-secondary ml-3">({totalItems} {totalItems === 1 ? 'item' : 'items'})</span>
           )}
@@ -123,7 +123,7 @@ export default function CartPage() {
 
           {/* Order summary */}
           <div>
-            <div className="bg-surface-alt border-[0.5px] border-bronze/25 p-6">
+            <div className="bag-summary bg-surface-alt border-[0.5px] border-bronze/25 p-6">
               <h2 className="font-cormorant text-2xl font-light text-theme-primary mb-5">Order Summary</h2>
               <div className="bronze-rule mb-5" />
               <div className="space-y-3">
@@ -137,6 +137,7 @@ export default function CartPage() {
                     {shipping === 0 ? 'Free' : `₹${shipping}`}
                   </span>
                 </div>
+                <div className="delivery-meter"><i style={{width: Math.min(100,subtotal / 999 * 100) + '%'}} /></div>
                 {subtotal < 999 && (
                   <p className="font-inter text-[11px] text-theme-secondary bg-theme border-[0.5px] border-bronze/20 px-3 py-2">
                     Add ₹{(999 - subtotal).toLocaleString('en-IN')} more for free shipping
@@ -149,25 +150,7 @@ export default function CartPage() {
                 <span className="font-cormorant text-3xl font-light text-theme-primary">₹{total.toLocaleString('en-IN')}</span>
               </div>
 
-              {/* Promo code */}
-              <div className="flex gap-0 mb-5">
-                <input
-                  type="text"
-                  placeholder="Promo code"
-                  defaultValue="DENZOS50"
-                  className="flex-1 bg-theme border-[0.5px] border-bronze/40 border-r-0 px-3 py-2.5 font-inter text-sm focus:outline-none"
-                />
-                <button className="bg-charcoal text-ivory px-4 font-inter text-[11px] tracking-widest uppercase hover:bg-bronze transition-colors">
-                  Apply
-                </button>
-              </div>
-
-              <button
-                onClick={() => alert('Checkout coming soon! Razorpay integration in progress.')}
-                className="w-full btn-primary justify-center"
-              >
-                Proceed to Checkout
-              </button>
+              <p className="mb-5 text-sm text-theme-secondary">Collection offers are already reflected in your subtotal.</p><Link href="/checkout" className="w-full btn-primary justify-center">Preview checkout</Link>
               <Link href="/shop" className="block text-center mt-4 font-inter text-xs text-theme-secondary hover:text-bronze transition-colors">
                 ← Continue Shopping
               </Link>

@@ -176,13 +176,7 @@ export default function CartDrawer() {
                   </span>
                 </div>
                 <p className="font-inter text-[11px]" style={{ color: 'var(--text-secondary)' }}>Shipping and taxes calculated at checkout</p>
-                <motion.button
-                  className="w-full btn-primary justify-center"
-                  onClick={() => alert('Checkout coming soon! Razorpay integration in progress.')}
-                  whileTap={{ scale: 0.97 }}
-                >
-                  Proceed to Checkout
-                </motion.button>
+                <Link href="/checkout" onClick={closeDrawer} className="w-full btn-primary justify-center">Preview checkout</Link>
                 <Link href="/cart" onClick={closeDrawer} className="block text-center font-inter text-xs transition-colors" style={{ color: 'var(--text-secondary)' }}>
                   View full cart
                 </Link>

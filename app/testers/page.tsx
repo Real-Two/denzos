@@ -1,3 +1,4 @@
+import ScentFinder from '@/components/product/ScentFinder';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,25 +14,9 @@ export default function TestersPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Editorial hero header */}
-      <div className="bg-surface-alt border-b-[0.5px] border-bronze/20 py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="section-subheading mb-4">Discovery Collection</p>
-          <h1 className="font-cormorant text-5xl md:text-6xl lg:text-7xl font-light text-theme-primary leading-[1.05] mb-6">
-            Find your signature<br />
-            <em className="not-italic text-bronze">before you commit.</em>
-          </h1>
-          <div className="w-16 h-[0.5px] bg-bronze mx-auto mb-8" />
-          <p className="font-inter text-sm md:text-base text-theme-secondary leading-relaxed max-w-2xl mx-auto">
-            Each 10ml tester is a full-concentration Eau de Parfum — the exact same formula as the full bottle.
-            Not a diluted sample. Not a promotional version. The real thing, in a size that lets you wear it properly before you decide.
-          </p>
-        </div>
-      </div>
-
-      {/* Tester products */}
+      <ScentFinder />
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <p className="font-inter text-[10px] tracking-[0.25em] uppercase text-theme-secondary mb-2">All 5 Fragrances Available as Testers</p>
+        <p className="font-inter text-[10px] tracking-[0.25em] uppercase text-theme-secondary mb-2">Browse by fragrance</p>
         <h2 className="font-cormorant text-3xl font-light text-theme-primary mb-10">The Full Collection — 10ml</h2>
         <div className="bronze-rule mb-10" />
 

@@ -61,23 +61,14 @@ function ShopContent() {
   return (
     <div className="max-w-7xl mx-auto px-6 py-12">
       {/* Page header */}
-      <div className="text-center mb-12">
-        <p className="section-subheading mb-2">Denzos — Maison de Parfum</p>
-        <h1 className="font-cormorant text-5xl md:text-6xl font-light text-theme-primary mb-4">
-          The Collection
-        </h1>
-        <div className="w-12 h-[0.5px] bg-bronze mx-auto mb-4" />
-        <p className="font-inter text-sm text-theme-secondary max-w-md mx-auto">
-          Five Eau de Parfum compositions. Each one a statement. Every 10ml tester carries full EDP concentration.
-        </p>
-      </div>
+      <header className="collection-cover"><p className="editor-kicker">Denzos · Eau de parfum</p><h1>The perfume<br/><em>collection.</em></h1><a href="#collection-grid">Explore the bottles ↓</a></header>
 
       {/* Filter tabs */}
-      <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
+      <div id="collection-grid" className="filter-rail flex flex-wrap items-center justify-center gap-2 mb-4">
         {filterTabs.map(tab => (
           <button
             key={tab.value}
-            onClick={() => setActiveFilter(tab.value)}
+            aria-pressed={activeFilter === tab.value} onClick={() => setActiveFilter(tab.value)}
             className={`font-inter text-[11px] tracking-[0.2em] uppercase px-5 py-2.5 border-[0.5px] transition-all duration-200 ${
               activeFilter === tab.value
                 ? 'bg-bronze text-ivory border-bronze'

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./edition.css";
 import { CartProvider } from "@/context/CartContext";
 import { WishlistProvider } from "@/context/WishlistContext";
 import { ThemeProvider } from "@/context/ThemeContext";
@@ -7,7 +8,6 @@ import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CartDrawer from "@/components/cart/CartDrawer";
-import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import ThemeScript from "@/components/ui/ThemeScript";
 
 export const metadata: Metadata = {
@@ -44,7 +44,7 @@ export default function RootLayout({
               <main>{children}</main>
               <Footer />
               <CartDrawer />
-              <WhatsAppButton />
+              
             </WishlistProvider>
           </CartProvider>
         </ThemeProvider>
