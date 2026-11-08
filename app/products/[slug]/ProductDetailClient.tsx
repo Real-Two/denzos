@@ -112,8 +112,8 @@ function AmbientMotif({ mood, accentHex }: { mood: string; accentHex: string }) 
 }
 
 // ─── Main Component ──────────────────────────────────────────────────────────
-export default function ProductDetailClient({ product }: { product: Product }) {
-  const defaultSize = product.sizes.find(s => s.ml === 50) ?? product.sizes[0];
+export default function ProductDetailClient({ product, preferredSize }: { product: Product; preferredSize: number }) {
+  const defaultSize = product.sizes.find(s => s.ml === preferredSize) ?? product.sizes[0];
   const [selectedSize, setSelectedSize] = useState<ProductSize>(defaultSize);
   const [selectedImage, setSelectedImage] = useState(defaultSize.image ?? product.images[0]);
   const [quantity, setQuantity] = useState(1);

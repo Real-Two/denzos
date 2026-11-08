@@ -1,4 +1,6 @@
 'use client';
+import ScentCompare from '@/components/product/ScentCompare';
+
 
 import { useState, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
@@ -129,6 +131,7 @@ function ShopContent() {
         })}
       </div>
 
+      <ScentCompare />
       {filtered.length === 0 && (
         <div className="text-center py-20">
           <p className="font-cormorant text-3xl font-light text-theme-secondary">No fragrances found</p>

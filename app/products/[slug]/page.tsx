@@ -4,6 +4,7 @@ import products from '@/data/products.json';
 import ProductDetailClient, { Product } from './ProductDetailClient';
 
 interface PageProps {
+  searchParams?: { size?: string };
   params: { slug: string };
 }
 
@@ -20,9 +21,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function ProductPage({ params }: PageProps) {
+export default function ProductPage({ params, searchParams }: PageProps) {
   const product = products.find(p => p.slug === params.slug);
   if (!product) notFound();
 
-  return <ProductDetailClient product={product as unknown as Product} />;
+  return <ProductDetailClient key={searchParams?.size} preferredSize={Number(searchParams?.size) || 50} product={product as unknown as Product} />;
 }

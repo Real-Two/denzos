@@ -50,7 +50,7 @@ export default function TestersPage() {
               >
                 {/* Product image */}
                 <div className="flex justify-center md:justify-start">
-                  <Link href={`/products/${product.slug}`}>
+                  <Link href={`/products/${product.slug}?size=10`}>
                     <div className="relative w-28 h-36 bg-surface-alt overflow-hidden flex-shrink-0 hover:opacity-90 transition-opacity">
                       <Image
                         src={testerSize.image ?? product.images[0]}
@@ -70,7 +70,7 @@ export default function TestersPage() {
                       {product.descriptors.join(' · ')}
                     </p>
                   )}
-                  <Link href={`/products/${product.slug}`}>
+                  <Link href={`/products/${product.slug}?size=10`}>
                     <h3 className="font-cormorant text-3xl font-light text-theme-primary hover:text-bronze transition-colors mb-1">
                       {product.name}
                     </h3>
@@ -104,7 +104,7 @@ export default function TestersPage() {
                     </p>
                   )}
                   <Link
-                    href={`/products/${product.slug}`}
+                    href={`/products/${product.slug}?size=10`}
                     className="inline-flex items-center gap-2 font-inter text-[11px] tracking-[0.2em] uppercase py-3 px-6 transition-colors text-ivory"
                     style={{ backgroundColor: accentHex }}
                   >
@@ -137,7 +137,7 @@ export default function TestersPage() {
             {products.map(p => {
               const pTesterSize = p.sizes.find(s => s.ml === 10);
               return (
-              <Link key={p.id} href={`/products/${p.slug}`}>
+              <Link key={p.id} href={`/products/${p.slug}?size=10`}>
                 <div className="relative w-16 h-20 bg-theme overflow-hidden hover:opacity-80 transition-opacity">
                   <Image
                     src={pTesterSize?.image ?? p.images[0]}

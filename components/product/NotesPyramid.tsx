@@ -25,22 +25,22 @@ export default function NotesPyramid({ notes, accentHex = '#C49A2E', productName
   const pillText = darkMode ? '#F0EDE6' : 'var(--text-primary)';
   const bands = [
     {
-      label: 'Top Notes',
-      sublabel: 'First impression · 15–30 min',
+      label: 'First spray',
+      sublabel: 'Base notes',
       notes: notes.top,
       fillOpacity: 0.22,
       strokeOpacity: 0.5,
     },
     {
-      label: 'Heart Notes',
-      sublabel: 'The soul of the scent · 2–4 hrs',
+      label: 'As it settles',
+      sublabel: 'Base notes',
       notes: notes.heart,
       fillOpacity: 0.5,
       strokeOpacity: 0.7,
     },
     {
-      label: 'Base Notes',
-      sublabel: 'The lasting impression · 6+ hrs',
+      label: 'Dry-down',
+      sublabel: 'Base notes',
       notes: notes.base,
       fillOpacity: 0.85,
       strokeOpacity: 1,

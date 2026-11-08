@@ -1,74 +1,32 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import products from '@/data/products.json';
+import styles from './Hero.module.css';
+
+const collection = ['woody-intense', 'oud-signature', 'noir-floral', 'frosted-air', 'amber-royale'].map(slug => products.find(p => p.slug === slug)!);
+const materials = ['Carved timber', 'Smoked oud', 'Velvet petals', 'Frosted glass', 'Golden resin'];
 
 export default function Hero() {
-  return (
-    <section className="relative min-h-[92vh] flex items-center overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/hero/hero.png"
-          alt="Denzos Maison de Parfum"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-        {/* Gradient overlay — adapts to theme */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(to right, var(--bg) 0%, rgba(var(--bg-rgb), 0.85) 55%, rgba(var(--bg-rgb), 0.15) 100%)',
-          }}
-        />
+  const [index, setIndex] = useState(0);
+  const scent = collection[index];
+  const bottle = scent.sizes.find(size => size.ml === 50)!;
+  return <section className={styles.archive} aria-label="Explore the perfume collection">
+    <div className={styles.spread}>
+      <div className={styles.copy} key={scent.slug}>
+        <p className={styles.kicker}>Denzos &nbsp; / &nbsp; Eau de parfum</p>
+        <h1>{scent.name.split(' ')[0]}<br/><em>{scent.name.split(' ')[1]}</em></h1>
+        <p className={styles.notes}>{scent.notes.top[0]} · {scent.notes.heart[0]} · {scent.notes.base[0]}</p>
+        <p className={styles.price}>50 ml &nbsp; / &nbsp; ₹{bottle.price.toLocaleString('en-IN')}</p>
+        <div className={styles.actions}><Link href={'/products/' + scent.slug}>Explore fragrance ↗</Link><Link href={'/products/' + scent.slug + '?size=10'}>Try 10 ml</Link></div>
       </div>
-
-      {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-6 py-24 w-full">
-        <div className="max-w-lg animate-fade-in">
-          <p className="font-inter text-[10px] tracking-[0.35em] uppercase mb-6" style={{ color: 'var(--text-secondary)' }}>
-            Inaugural Collection — 2026
-          </p>
-          <h1 className="font-cormorant text-6xl md:text-7xl lg:text-8xl font-light leading-[1.05] mb-6" style={{ color: 'var(--text-primary)' }}>
-            Composed<br />
-            <em className="not-italic" style={{ color: 'var(--bronze)' }}>for those</em><br />
-            who linger.
-          </h1>
-          <p className="font-inter text-sm leading-relaxed mb-10 max-w-sm" style={{ color: 'var(--text-secondary)' }}>
-            Fine Indian perfumery rooted in ancient botanicals. Oud, saffron, mogra, and sandalwood — reimagined for the modern connoisseur.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Link href="/shop" className="btn-primary">
-              Shop Now
-            </Link>
-            <Link href="/testers" className="btn-ghost">
-              Discovery Testers
-            </Link>
-          </div>
-          {/* Code callout */}
-          <div
-            className="mt-8 inline-flex items-center gap-3 px-5 py-3"
-            style={{
-              border: '0.5px solid rgba(196,154,46,0.4)',
-              backgroundColor: 'rgba(var(--bg-rgb), 0.8)',
-            }}
-          >
-            <div className="w-[2px] h-8" style={{ backgroundColor: 'var(--bronze)' }} />
-            <div>
-              <p className="font-inter text-[10px] tracking-[0.2em] uppercase" style={{ color: 'var(--text-secondary)' }}>Inaugural Offer</p>
-              <p className="font-inter text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
-                Use <span style={{ color: 'var(--bronze)', fontWeight: 600 }}>DENZOS50</span> for 50% off
-              </p>
-            </div>
-          </div>
-        </div>
+      <div key={index} className={styles.scene} data-scent={scent.slug}>
+        <div className={styles.light}/><div className={styles.flacon}><div className={styles.cap}/><div className={styles.glass}><Image src={bottle.image} alt={scent.name + ' label on a concept bottle'} fill sizes="180px" priority={index === 0}/></div></div>
+        <span className={styles.caption}>{materials[index]}</span>
       </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-        <div className="w-[1px] h-10" style={{ backgroundColor: 'rgba(196,154,46,0.4)' }} />
-        <p className="font-inter text-[9px] tracking-[0.3em] uppercase rotate-90 translate-x-4" style={{ color: 'var(--text-secondary)' }}>Scroll</p>
-      </div>
-    </section>
-  );
+    </div>
+    <div className={styles.tray} aria-label="Choose a fragrance">{collection.map((p,i) => <button key={p.slug} aria-pressed={i===index} onClick={()=>setIndex(i)}><i style={{backgroundColor:p.theme.accent_hex}}/>{p.name}</button>)}</div>
+  </section>;
 }
